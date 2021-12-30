@@ -1,5 +1,5 @@
 import random
-class ClassName:
+class Game:
   def __init__(self, decks, player1, player2):
     self.decks = decks
     if player1 != None:
@@ -11,6 +11,9 @@ class ClassName:
   def createDeck(self, decks):
     cards = [i for i in [1,2,3,4,5,6,7,8,9,10,11,12,13]]*decks
     return cards
+  def test(self):
+    print('game')
+    return
   def pickCard(self, deck, list, count):
     for num in count:
       list.append(num)
@@ -24,3 +27,5 @@ class ClassName:
     player2D = False #ダブルダウンしたかどうか
     player1Cards,deck = self.pickCard(deck, player1Cards, 2)
     player2Cards,deck = self.pickCard(deck, player2Cards, 2)
+    player1.play()
+

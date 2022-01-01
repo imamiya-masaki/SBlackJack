@@ -4,6 +4,27 @@ import random
 import numpy as np
 from typing import Tuple, Dict
 
+class dealer:
+  #　一応ディーラーもクラスで分けておく。
+  def __init__(self):
+    self = self
+  def max(sumCard: str) -> int:
+    cards = sumCard.split('/')
+    return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
+  def play(self, delerCards: str) -> Dict[str, str]:
+    if len(delerCards.split('/')) > 1:
+      # エースカード入ってるなら
+      if self.max(delerCards) <= 17: #ソフト17stay
+        return {'action': 'HIT', 'state': 'dealer'}
+      else:
+        return {'action': 'STAY', 'state': 'dealer'}
+    else:
+      if self.max(delerCards) <= 16: #all17stay
+        return {'action': 'HIT', 'state': 'dealer'}
+      else:
+        return {'action': 'STAY', 'state': 'dealer'}
+
+
 class player:
   # 型を簡単に作るために模擬的なもの
   def __init__(self):
@@ -85,11 +106,11 @@ class Game:
     return str_lists.join('/'), True
 
     return ""
-  def Max(sumCard: str) -> int:
+  def max(sumCard: str) -> int:
     cards = sumCard.split('/')
     return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
   
-  def playGame(self, player1: player):
+  def playGame(self, player1: player or montekarlo) -> Tuple[any[...], int]:
     # 1play
     deck = random.shuffle(self.createDeck(self.decks))
     result: str = "" #引き分け,勝ち,負け,etc... 
@@ -102,6 +123,11 @@ class Game:
     delerSum = self.ini_sum(delerCards)
     #playerの行動
     plyer1_select = [] #本質的にはdictの配列なんだけど、なぜか型宣言できない...
+    if self.max(delerSum) == 21:
+      # ディーラーが初期手札で21ならディーラーの勝ち
+      return plyer1_select, -1
+      #報酬を-1としているが、player1_selectがからなので影響しない~...と考えれるし、
+      #インスランスをつけたくなってもいい感じにできそう
     while True:
       get: Dict[str, str] = player1.play(playerSum, delerSum, player1D)
       plyer1_select.append(get)
@@ -113,9 +139,41 @@ class Game:
         if get['action'] == 'DOUBLE':
           player1D = True
       if get['action'] == 'STAY' or result == 'LOSE' or player1D == True:
-        #playerがstayを選択か、バーストして負けかダブルダウンを選択したら、プレイヤーの行動は終了
+        #playerがstayを選択か、(バースト等して)負けかダブルダウンを選択したら、プレイヤーの行動は終了
         break
     #ディーラーの行動
+    if result is not "LOSE":
+      while True:
+        get: Dict[str, str] = dealer.play(delerSum)
+        if get['action'] == 'HIT':
+          card, deck = self.pickCard(deck)
+          delerSum, isSafe = self.calculate(delerSum, card)
+          if isSafe is False:
+            # プレイヤーが負けていない状態で、ディーラーがバーストしたら、勝ち
+            result = "WIN"
+        if get['action'] == 'STAY' or result == 'WIN':
+          break
+    #比較
+    if result == '':
+      #結果がまだ決まってないなら
+      playerMax = self.max(playerSum)
+      delerMax = self.max(delerSum)
+      if playerMax > delerMax:
+        result = "WIN"
+      elif playerMax < delerMax:
+        result = "LOSE"
+      else:
+        result = "DRAW"
+    reward = 0
+    if result == "WIN":
+      reward = 1
+    elif result == "LOSE":
+      reward = -1
+    if player1D is True:
+      reward *= 2
+    return plyer1_select, reward
+
+
 
   def ini_sum(self,cards: int[...]) -> str:
     result = "0"

@@ -29,8 +29,10 @@ class Game:
       map[result] = True
       if targetCard == 1:
         map[result + 10] = True
-    lists: int[...] = map.keys().sort()
-    str_lists: str[...] = [ str(val) for val in lists]
+    keys: int[...] = map.keys()
+    filter(lambda x: x <= 21, keys)
+    lists: int[...] = keys.sort()
+    str_lists: str[...] = [str(val) for val in lists]
     return str_lists.join('/')
 
     return ""
@@ -48,27 +50,11 @@ class Game:
     plyer1_select = []
     while True:
       get = player1.play(playerSum, delerSum, player1D)
-  def ini_sum(self,cards: int[2]) -> str:
-    if len(cards) == 1:
-      return str(cards[0])
-    a = cards[0]
-    b = cards[1]
-    if a < b:
-      # aの方が大きくなる
-      swap = a
-      a = b
-      b = swap
-    if a >= 10:
-      a = 10
-    if b >= 10:
-      b = 10
-    if a == 1 and b ==1:
-      return "21"
-    if b == 10 and a == 1:
-      return "21"
-    if b == 1:
-      return str(a+10+b)+"/"+str(a+b) #これでもしこえた場合右で計算するようにする
-    return str(a+b)
+  def ini_sum(self,cards: int[...]) -> str:
+    result = "0"
+    for card in cards:
+      result = self.calculate(result, card)
+    return result
 class montekarlo:
   def __init__(self):
     self.tree = {}

@@ -2,16 +2,17 @@
 # -*- coding: utf-8 -*-
 import random
 import numpy as np
+import typing as tp
 from typing import Tuple, Dict
 
 class dealer:
   #　一応ディーラーもクラスで分けておく。
   def __init__(self):
     self = self
-  def max(sumCard: str) -> int:
+  def max(self,sumCard:str) -> int:
     cards = sumCard.split('/')
     return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
-  def play(self, delerCards: str) -> Dict[str, str]:
+  def play(self, delerCards:str) -> Dict[str, str]:
     if len(delerCards.split('/')) > 1:
       # エースカード入ってるなら
       if self.max(delerCards) <= 17: #ソフト17stay
@@ -36,8 +37,8 @@ class player:
 class montekarlo:
   def __init__(self):
     self.tree = {}
-  def play(self, playerSumCards: str, delerCards: str, player1D: bool) -> Dict[str, str]:
-    if self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] == None:
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool) -> Dict[str, str]:
+    if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
       #初期化
       initial = {}
       initial['N'] = 0
@@ -75,18 +76,22 @@ class Game:
       self.player1 = {}
       self.player1.sum = 0
   def createDeck(self, decks):
-    cards = [i for i in [1,2,3,4,5,6,7,8,9,10,11,12,13]]*decks
+    cards = [i for i in [1,2,3,4,5,6,7,8,9,10,11,12,13]]*4*decks
     return cards
   def test(self):
     print('game')
     return
-  def pickCard(self, deck: int[...]) -> Tuple[int, int[...]]:
+  def pickCard(self, deck:list) -> Tuple[int, list]:
+    if len(deck) == 0:
+      return 0, []
     return deck[0], deck[1:]
-  def pickAndInsertCards(self, deck: int[...], list: int[...], count: int) -> Tuple[int[...], int[...]]:
-    for num in count:
-      list.append(num)
+  def pickAndInsertCards(self, deck: list, list: list, count: int) -> Tuple[list, list]:
+    for num in range(count):
+      list.append(deck[num])
+    if deck is None:
+      return list, None
     return list, deck[count:]
-  def calculate(self, cards: str, card: int) -> Tuple[str, bool]:
+  def calculate(self, cards:str, card:int) -> Tuple[str, bool]:
     #初期の計算はsumの責務
     #つまり三枚目以降を考えればよい
     spl = cards.split('/')
@@ -97,22 +102,24 @@ class Game:
       map[result] = True
       if targetCard == 1:
         map[result + 10] = True
-    keys: int[...] = map.keys()
-    filter(lambda x: x <= 21, keys)
+    keys: int[...] = list(map.keys())
+    keys = list(filter(lambda x: x <= 21, keys))
     if len(keys) == 0:
       return '', False
-    lists: int[...] = keys.sort()
+    lists: int[...] = keys
+    lists.sort()
     str_lists: str[...] = [str(val) for val in lists]
-    return str_lists.join('/'), True
+    return '/'.join(str_lists), True
 
     return ""
-  def max(sumCard: str) -> int:
+  def max(self, sumCard:str) -> int:
     cards = sumCard.split('/')
     return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
   
-  def playGame(self, player1: player or montekarlo) -> Tuple[any[...], int]:
+  def playGame(self, player1:player or montekarlo) -> Tuple[list, int]:
     # 1play
-    deck = random.shuffle(self.createDeck(self.decks))
+    deck = self.createDeck(self.decks)
+    random.shuffle(deck)
     result: str = "" #引き分け,勝ち,負け,etc... 
     player1Cards = []
     player1D = False #ダブルダウンしたかどうか
@@ -173,15 +180,20 @@ class Game:
       reward *= 2
     return plyer1_select, reward
 
-
-
-  def ini_sum(self,cards: int[...]) -> str:
+  def ini_sum(self,cards: list) -> str:
     result = "0"
     for card in cards:
-      result = self.calculate(result, card)
+      result, flag = self.calculate(result, card)
     return result
 
 
 if __name__ == '__main__':
-    game = Game(1)
-    game.test()
+    player1Sum = 0 # player0の勝ち星　グラフよう
+    logs = [] # playerのログをとる
+    logs.append(player1Sum)
+    player1 = montekarlo()
+    for i in range(10):
+      # 100回繰り返す
+      game = Game(1)
+      player_select, result = game.playGame(player1)
+      print(player_select, result)

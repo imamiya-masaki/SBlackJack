@@ -4,8 +4,9 @@ import random
 import numpy as np
 import typing as tp
 from typing import Tuple, Dict
+from matplotlib import pyplot
 
-class dealer:
+class dealerClass:
   #　一応ディーラーもクラスで分けておく。
   def __init__(self):
     self = self
@@ -34,24 +35,44 @@ class player:
   def play() -> Dict[str, str]:
     return {'action': 'player', 'state': 'player'}
 
+def createInitial() -> dict:
+  initial = {}
+  initial['N'] = 0
+  initial['HIT'] = {}
+  initial['HIT']['n'] = 0
+  initial['HIT']['val'] = 0
+  initial['STAY'] = {}
+  initial['STAY']['n'] = 0
+  initial['STAY']['val'] = 0
+  initial['DOUBLE'] = {}
+  initial['DOUBLE']['n'] = 0
+  initial['DOUBLE']['val'] = 0
+  return initial
+
+def multiAction(target, number) -> dict:
+  action = {}
+  action['N'] = target['N']*number
+  action['HIT'] = {}
+  action['HIT']['n'] = target['HIT']['n']
+  action['HIT']['val'] = target['HIT']['val']*number
+  action['STAY'] = {}
+  action['STAY']['n'] = target['STAY']['n']
+  action['STAY']['val'] = target['STAY']['val']*number
+  action['DOUBLE'] = {}
+  action['DOUBLE']['n'] = target['DOUBLE']['n']
+  action['DOUBLE']['val'] = target['DOUBLE']['val']*number
+  return action
 class montekarlo:
   def __init__(self):
     self.tree = {}
   def play(self, playerSumCards:str, delerCards:str, player1D:bool) -> Dict[str, str]:
     if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
+      if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
+        #ダブルダウンの可否で片方が存在していれば
+        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = multiAction(self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D)], (1/2))
+      else:
       #初期化
-      initial = {}
-      initial['N'] = 0
-      initial['HIT'] = {}
-      initial['HIT']['n'] = 0
-      initial['HIT']['val'] = 0
-      initial['STAY'] = {}
-      initial['STAY']['n'] = 0
-      initial['STAY']['val'] = 0
-      initial['DOUBLE'] = {}
-      initial['DOUBLE']['n'] = 0
-      initial['DOUBLE']['val'] = 0
-      self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = initial
+        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = createInitial()
     targetVal: int = 0
     targetKey: str = 'HIT'
     N = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)]['N']
@@ -69,6 +90,18 @@ class montekarlo:
         targetVal = val
         targetKey = key
     return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)}
+  def learning(self, actions: list, reward: int):
+    for info in actions:
+      action = info['action']
+      state = info['state']
+      if state not in self.tree:
+        self.tree[state] = createInitial()
+      self.tree[state][action]['val'] += reward
+      self.tree[state][action]['n'] += 1
+      self.tree[state]['N'] += 1
+    return
+  def output_learnData(self):
+    return self.tree
 class Game:
   def __init__(self, decks, player1=None):
     self.decks = decks
@@ -115,6 +148,18 @@ class Game:
   def max(self, sumCard:str) -> int:
     cards = sumCard.split('/')
     return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
+
+  def judge(self, playerSum, delerSum) -> str:
+    result = "DRAW"
+    playerMax = self.max(playerSum)
+    delerMax = self.max(delerSum)
+    if playerMax > delerMax:
+      result = "WIN"
+    elif playerMax < delerMax:
+      result = "LOSE"
+    else:
+      result = "DRAW"
+    return result
   
   def playGame(self, player1:player or montekarlo) -> Tuple[list, int]:
     # 1play
@@ -122,6 +167,7 @@ class Game:
     random.shuffle(deck)
     result: str = "" #引き分け,勝ち,負け,etc... 
     player1Cards = []
+    dealer = dealerClass()
     player1D = False #ダブルダウンしたかどうか
     delerCards = []
     player1Cards,deck = self.pickAndInsertCards(deck, player1Cards, 2)
@@ -162,15 +208,7 @@ class Game:
           break
     #比較
     if result == '':
-      #結果がまだ決まってないなら
-      playerMax = self.max(playerSum)
-      delerMax = self.max(delerSum)
-      if playerMax > delerMax:
-        result = "WIN"
-      elif playerMax < delerMax:
-        result = "LOSE"
-      else:
-        result = "DRAW"
+      result = self.judge(playerSum, delerSum)
     reward = 0
     if result == "WIN":
       reward = 1
@@ -190,10 +228,27 @@ class Game:
 if __name__ == '__main__':
     player1Sum = 0 # player0の勝ち星　グラフよう
     logs = [] # playerのログをとる
+    pres = []
     logs.append(player1Sum)
+    pres.append(player1Sum)
     player1 = montekarlo()
-    for i in range(10):
+    for i in range(1000):
+      game = Game(1)
+      player_select, result = game.playGame(player1)
+      pres.append(result+pres[len(pres)-1])
+    for i in range(50000):
+      # 50000回繰り返す
+      game = Game(1)
+      player_select, result = game.playGame(player1)
+      player1.learning(player_select, result*100)
+    for i in range(1000):
       # 100回繰り返す
       game = Game(1)
       player_select, result = game.playGame(player1)
-      print(player_select, result)
+      logs.append(result+logs[len(logs)-1])
+      player1.learning(player_select, result*100)
+    x_1 = np.array([ i for i in range(len(logs)) ])
+    x_2 = np.array([ i for i in range(len(pres)) ])
+    pyplot.plot(x_1, np.array(logs), color='red')
+    pyplot.plot(x_2, np.array(pres), color='yellow')
+    pyplot.show()

@@ -69,7 +69,7 @@ class montekarlo:
     if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
       if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
         #ダブルダウンの可否で片方が存在していれば
-        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = multiAction(self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D)], (1/2))
+        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = multiAction(self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D)], (1))
       else:
       #初期化
         self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = createInitial()
@@ -128,7 +128,7 @@ class Game:
       self.player1 = {}
       self.player1.sum = 0
   def createDeck(self, decks):
-    cards = [i for i in [1,2,3,4,5,6,7,8,9,10,11,12,13]]*4*decks
+    cards = [i for i in [1,2,3,4,5,6,7,8,9,10,11,12,13]]*int(float(4*decks))
     return cards
   def test(self):
     print('game')
@@ -260,20 +260,19 @@ if __name__ == '__main__':
     pres.append(player1Sum)
     player1 = montekarlo()
     player2 = montekarlo()
+    deckCount = 1
+    game = Game(deckCount)
     for i in range(1000):
-      game = Game(1)
       player_select, result = game.playGame(player1)
       pres.append(result+pres[len(pres)-1])
     for i in range(50000):
       # 50000回繰り返す
-      game = Game(1)
       player_select1, result1 = game.playGame(player1)
       player1.simpleLearning(player_select1, result1*100)
       player_select2, result2 = game.playGame(player2)
       player2.learning(player_select2, result2*100)
     for i in range(1000):
       # 100回繰り返す
-      game = Game(1)
       player_select1, result1 = game.playGame(player1)
       player_select2, result2 = game.playGame(player2)
       logs.append(result1+logs[len(logs)-1])

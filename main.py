@@ -90,11 +90,11 @@ class basicStorategy:
     playerNum = self.max(playerSumCards) # maxで考える
     action = 'STAY'
     if playerNum == 21:
-      return {'action': 'STAY', 'state': state}
+      return {'action': action, 'state': state}
     if soft:
       #ソフトハンド
       PreplayerSelect: int[...] = softHandDict[playerNum]
-      playerSelect: int = PreplayerSelect[self.max(delerCards)-1]
+      playerSelect: int = PreplayerSelect[self.max(delerCards)-2]
       if playerSelect == 1:
         #STAY
         action = 'HIT'
@@ -105,7 +105,15 @@ class basicStorategy:
     else:
       #ハードハンド
       PreplayerSelect: int[...] = softHandDict[playerNum]
-      playerSelect: int = PreplayerSelect[self.max(delerCards)]
+      playerSelect: int = PreplayerSelect[self.max(delerCards)-2]
+      if playerSelect == 1:
+        #STAY
+        action = 'HIT'
+      elif playerSelect == 2:
+        action = 'DOUBLE'
+      else:
+        action = 'STAY'
+    return {'action': action, 'state': state}
     
 
 

@@ -6,6 +6,45 @@ import typing as tp
 from typing import Tuple, Dict
 from matplotlib import pyplot
 
+hardHandDict = {
+  #エースはindex0として扱い、以降,2,3,4,.. -> 1,2,3,...として扱う
+  #HIT -> 1, DOUBLE -> 2, STAY -> 0
+  '2': [1,1,1,1,1,1,1,1,1,1],
+  '3': [1,1,1,1,1,1,1,1,1,1],
+  '4': [1,1,1,1,1,1,1,1,1,1],
+  '5': [1,1,1,1,1,1,1,1,1,1],
+  '6': [1,1,1,1,1,1,1,1,1,1],
+  '7': [1,1,1,1,1,1,1,1,1,1],
+  '8': [1,1,1,1,1,1,1,1,1,1],
+  '8': [1,1,1,1,1,1,1,1,1,1],
+  '9': [1,1,2,2,2,2,1,1,1,1],
+  '10': [1,2,2,2,2,2,2,2,2,1],
+  '11': [1,2,2,2,2,2,2,2,2,2],
+  '12': [1,1,1,0,0,0,1,1,1,1],
+  '13': [1,0,0,0,0,0,1,1,1,1],
+  '14': [1,0,0,0,0,0,1,1,1,1],
+  '15': [1,0,0,0,0,0,1,1,1,1],
+  '16': [1,0,0,0,0,0,1,1,1,1],
+  '17': [0,0,0,0,0,0,0,0,0,0],
+  '18': [0,0,0,0,0,0,0,0,0,0],
+  '19': [0,0,0,0,0,0,0,0,0,0],
+  '20': [0,0,0,0,0,0,0,0,0,0],
+  '21': [0,0,0,0,0,0,0,0,0,0],
+}
+
+softHandDict = {
+  #エースはindex0として扱い、以降,2,3,4,.. -> 1,2,3,...として扱う
+  #HIT -> 1, DOUBLE -> 2, STAY -> 0
+  '13': [1,1,1,1,2,2,1,1,1,1],
+  '14': [1,1,1,1,2,2,1,1,1,1],
+  '15': [1,1,1,2,2,2,1,1,1,1],
+  '16': [1,1,1,2,2,2,1,1,1,1],
+  '17': [1,1,2,2,2,2,1,1,1,1],
+  '18': [1,0,2,2,2,2,0,0,1,1],
+  '19': [0,0,0,0,0,0,0,0,0,0],
+  '20': [0,0,0,0,0,0,0,0,0,0],
+}
+
 class dealerClass:
   #　一応ディーラーもクラスで分けておく。
   def __init__(self):
@@ -34,6 +73,28 @@ class player:
   @staticmethod
   def play() -> Dict[str, str]:
     return {'action': 'player', 'state': 'player'}
+
+class basicStorategy:
+
+  def max(self,sumCard:str) -> int:
+    cards = sumCard.split('/')
+    return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
+  def __init__(self):
+    self.tree = {}
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool) -> Dict[str, str]:
+    soft = False
+    if len(playerSumCards.split('/')) >= 2:
+      soft = True
+    state = str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)
+    playerNum = self.max(playerSumCards) # maxで考える
+    if playerNum == 21:
+      return {'action': 'STAY', 'state': state}
+    if soft:
+      #ソフトハンド
+    else:
+      #ハードハンド
+    
+
 
 def createInitial() -> dict:
   initial = {}

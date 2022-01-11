@@ -35,6 +35,7 @@ hardHandDict = {
 softHandDict = {
   #エースはindex9として扱い、以降,2,3,4,.. -> 0,1,2,...として扱う
   #HIT -> 1, DOUBLE -> 2, STAY -> 0
+  '12': [1,1,1,2,2,1,1,1,1,1],
   '13': [1,1,1,2,2,1,1,1,1,1],
   '14': [1,1,1,2,2,1,1,1,1,1],
   '15': [1,1,2,2,2,1,1,1,1,1],
@@ -93,7 +94,7 @@ class basicStorategy:
       return {'action': action, 'state': state}
     if soft:
       #ソフトハンド
-      PreplayerSelect: int[...] = softHandDict[playerNum]
+      PreplayerSelect: int[...] = softHandDict[str(playerNum)]
       playerSelect: int = PreplayerSelect[self.max(delerCards)-2]
       if playerSelect == 1:
         #STAY
@@ -104,7 +105,7 @@ class basicStorategy:
         action = 'STAY'
     else:
       #ハードハンド
-      PreplayerSelect: int[...] = softHandDict[playerNum]
+      PreplayerSelect: int[...] = hardHandDict[str(playerNum)]
       playerSelect: int = PreplayerSelect[self.max(delerCards)-2]
       if playerSelect == 1:
         #STAY
@@ -187,6 +188,9 @@ class montekarlo:
     return
   def learning(self, actions: list, reward: int):
     self.simpleLearning(actions, reward) #まずシンプルラーニングはする
+    if actions == []:
+      # ディーラーblackjackの時は計算しない
+      return
     if actions[0]['state'] not in self.tree:
       self.tree[actions[0]['state']] = createInitial()
     for index in range(len(actions)-1):
@@ -233,7 +237,7 @@ class Game:
     map = {}
     for val in spl:
       result = int(val) + targetCard
-      map[result] = True
+      map[int(val) + targetCard] = True
       if targetCard == 1:
         map[result + 10] = True
     keys: int[...] = list(map.keys())
@@ -272,18 +276,26 @@ class Game:
     playerBJ = False #playerブラックジャック
     delerCards = []
     player1Cards,deck = self.pickAndInsertCards(deck, player1Cards, 2)
-    delerCards,deck = self.pickAndInsertCards(deck, delerCards, 1)
+    delerCards,deck = self.pickAndInsertCards(deck, delerCards, 2)
+    openDelerCard = [delerCards[0]]
     playerSum = self.ini_sum(player1Cards)
     delerSum = self.ini_sum(delerCards)
+    openDelerSum = self.ini_sum(openDelerCard) # プレイヤーが見えているディーラーのカード
     plyer1_select = [] #本質的にはdictの配列なんだけど、なぜか型宣言できない...
     if self.max(delerSum) == 21:
       # ディーラーが初期手札で21ならディーラーの勝ち
       return plyer1_select, -1
       #報酬を-1としているが、player1_selectがからなので影響しない~...と考えれるし、
       #インスランスをつけたくなってもいい感じにできそう
+    if result is not "LOSE" and self.max(playerSum) == 21:
+      #ディーラーが21ではなくて、playerが21なら
+      value = 1.5 #playerがBJの時の返りはボーナス付き
+      if player1D:
+        value *= 2
+      return plyer1_select, value
     #playerの行動
     while True:
-      get: Dict[str, str] = player1.play(playerSum, delerSum, player1D)
+      get: Dict[str, str] = player1.play(playerSum, openDelerSum, player1D)
       plyer1_select.append(get)
       if get['action'] == 'HIT' or get['action'] == 'DOUBLE':
         card, deck = self.pickCard(deck)
@@ -295,12 +307,6 @@ class Game:
       if get['action'] == 'STAY' or result == 'LOSE' or player1D == True:
         #playerがstayを選択か、(バースト等して)負けかダブルダウンを選択したら、プレイヤーの行動は終了
         break
-    if result is not "LOSE" and self.max(playerSum) == 21:
-      #ディーラーが21ではなくて、playerが21なら
-      value = 1.5 #playerがBJの時の返りはボーナス付き
-      if player1D:
-        value *= 2
-      return plyer1_select, value
     #ディーラーの行動
     if result is not "LOSE":
       while True:
@@ -336,14 +342,20 @@ if __name__ == '__main__':
     player1Sum = 0 # player0の勝ち星　グラフよう
     logs = [] # playerのログをとる
     nextLogs = [] #learning強化
+    basicLogs = [] #basicStorategy
     pres = []
     logs.append(player1Sum)
     nextLogs.append(player1Sum)
+    basicLogs.append(player1Sum)
     pres.append(player1Sum)
     player1 = montekarlo()
     player2 = montekarlo()
+    basicPlayer = basicStorategy()
     deckCount = 1
     game = Game(deckCount)
+    # gameクラステスト
+    # testGame = Game(deckCount)
+    # print(testGame.calculate('1/11', 1))
     for i in range(1000):
       player_select, result = game.playGame(player1)
       pres.append(result+pres[len(pres)-1])
@@ -357,12 +369,16 @@ if __name__ == '__main__':
       # 100回繰り返す
       player_select1, result1 = game.playGame(player1)
       player_select2, result2 = game.playGame(player2)
+      _, result3 = game.playGame(basicPlayer)
       logs.append(result1+logs[len(logs)-1])
       nextLogs.append(result2+nextLogs[len(nextLogs)-1])
+      basicLogs.append(result3 + basicLogs[len(basicLogs)-1])
     x_1 = np.array([ i for i in range(len(pres)) ])
     x_2 = np.array([ i for i in range(len(logs)) ])
     x_3 = np.array([ i for i in range(len(nextLogs)) ])
+    x_4 = np.array([ i for i in range(len(basicLogs)) ])
     pyplot.plot(x_1, np.array(pres), color='yellow')
     pyplot.plot(x_2, np.array(logs), color='red')
     pyplot.plot(x_3, np.array(nextLogs), color='blue')
+    pyplot.plot(x_4, np.array(basicLogs), color='orange')
     pyplot.show()

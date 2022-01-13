@@ -125,7 +125,7 @@ def simpleInitialPlay (playerSumCards:str, delerCards:str, player1D:bool, key: s
     val = 0
   return val
 
-BASIC_PARAM = 0 # 同一ではないが不可能ではない場合の数字
+BASIC_PARAM = 1 # 同一ではないが不可能ではない場合の数字
 def basicStorategyPlay (playerSumCards:str, delerCards:str, player1D:bool, key: str) -> int:
   player = basicStorategy()
   player_play = player.play(playerSumCards,delerCards, player1D)
@@ -166,16 +166,18 @@ def multiAction(target, number) -> dict:
   action['DOUBLE']['n'] = target['DOUBLE']['n']
   action['DOUBLE']['val'] = target['DOUBLE']['val']*number
   return action
+
+
 class montekarlo:
   def __init__(self):
     self.tree = {}
-  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay) -> Dict[str, str]:
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay, fieldInfo={}) -> Dict[str, str]:
     if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
       if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
         #ダブルダウンの可否で片方が存在していれば
         self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = multiAction(self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D)], (1))
       else:
-      #初期化
+        #初期化
         self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = createInitial()
     targetVal: int = 0
     targetKey: str = 'HIT'
@@ -225,6 +227,75 @@ class montekarlo:
 
   def output_learnData(self):
     return self.tree
+class montekarlo_withFieldInfo:
+  def __init__(self):
+    self.tree = {}
+  def getFieldInfoValue(self, key: str, fieldInfo: dict, action: str) -> Tuple[int, bool]:
+    if key not in self.tree:
+      # keyはself.treeの中にある前提
+      print('error getFieldInfoValue')
+      return 0, False
+    if 'fieldInfo' not in self.tree[key]:
+      #fieldInfoにベクトルを格納していく
+      self.tree[key]['fieldInfo'] = []
+    flag = False
+    val = 0
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay, fieldInfo={}) -> Dict[str, str]:
+    if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
+      if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
+        #ダブルダウンの可否で片方が存在していれば
+        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = multiAction(self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D)], (1))
+      else:
+        #初期化
+        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = createInitial()
+    targetVal: int = 0
+    targetKey: str = 'HIT'
+    N = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)]['N']
+    for key in ['HIT', 'STAY', 'DOUBLE']:
+      target = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)][key]
+      if targetVal >= 99999:
+        #targetValが初期値選定されたらそれを超えることはできないので、
+        break
+      if target['n'] == 0:
+        val = initialPlay(playerSumCards, delerCards, player1D, key)
+      else:
+        ucb_cost = np.sqrt(2 * np.log(N))/ target['n']
+        val = target['val'] + ucb_cost
+      if targetVal < val:
+        targetVal = val
+        targetKey = key
+    return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)}
+def simpleLearning(self, actions: list, reward: int):
+  for info in actions:
+    action = info['action']
+    state = info['state']
+    if state not in self.tree:
+      self.tree[state] = createInitial()
+    self.tree[state][action]['val'] += reward
+    self.tree[state][action]['n'] += 1
+    self.tree[state]['N'] += 1
+  return
+def learning(self, actions: list, reward: int):
+  self.simpleLearning(actions, reward) #まずシンプルラーニングはする
+  if actions == []:
+    # ディーラーblackjackの時は計算しない
+    return
+  if actions[0]['state'] not in self.tree:
+    self.tree[actions[0]['state']] = createInitial()
+  for index in range(len(actions)-1):
+    preInfo = actions[index]
+    nextInfo = actions[index+1]
+    preAction = preInfo['action']
+    nextAction = nextInfo['action']
+    preState = preInfo['state']
+    nextState = nextInfo['state']
+    if nextState not in self.tree:
+      self.tree[nextState] = createInitial()
+    self.tree[preState][preAction]['val'] += (self.tree[nextState][nextAction]['val']/self.tree[nextState][nextAction]['n'])
+  return
+
+def output_learnData(self):
+  return self.tree
 class Game:
   def __init__(self, decks, player1=None):
     self.decks = decks
@@ -378,18 +449,18 @@ if __name__ == '__main__':
     # testGame = Game(deckCount)
     # print(testGame.calculate('1/11', 1))
     for i in range(1000):
-      player_select, result = game.playGame(player1,basicInitial)
+      player_select, result = game.playGame(player1,initialPlay)
       pres.append(result+pres[len(pres)-1])
     for i in range(50000):
       # 50000回繰り返す
-      player_select1, result1 = game.playGame(player1,basicInitial)
+      player_select1, result1 = game.playGame(player1,initialPlay)
       player1.simpleLearning(player_select1, result1*100)
       player_select2, result2 = game.playGame(player2)
       player2.learning(player_select2, result2*100)
     for i in range(1000):
       # 100回繰り返す
       player_select1, result1 = game.playGame(player1,basicInitial)
-      player_select2, result2 = game.playGame(player2)
+      player_select2, result2 = game.playGame(player2, basicInitial)
       _, result3 = game.playGame(basicPlayer)
       logs.append(result1+logs[len(logs)-1])
       nextLogs.append(result2+nextLogs[len(nextLogs)-1])

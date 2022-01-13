@@ -83,7 +83,7 @@ class basicStorategy:
     return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
   def __init__(self):
     self.tree = {}
-  def play(self, playerSumCards:str, delerCards:str, player1D:bool) -> Dict[str, str]:
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=None) -> Dict[str, str]:
     soft = False
     if len(playerSumCards.split('/')) >= 2:
       soft = True
@@ -117,6 +117,27 @@ class basicStorategy:
     return {'action': action, 'state': state}
     
 
+def simpleInitialPlay (playerSumCards:str, delerCards:str, player1D:bool, key: str) -> int:
+  val = 0
+  if not key  ==  'DOUBLE' or player1D == True:
+    val = 99999
+  else:
+    val = 0
+  return val
+
+BASIC_PARAM = 0 # 同一ではないが不可能ではない場合の数字
+def basicStorategyPlay (playerSumCards:str, delerCards:str, player1D:bool, key: str) -> int:
+  player = basicStorategy()
+  player_play = player.play(playerSumCards,delerCards, player1D)
+  if key == player_play['action']:
+    # 選択されたkeyとplayer_playが同一な場合
+    return 99999
+  elif not key  ==  'DOUBLE' or player1D == True:
+    # 同一ではないが不可能ではない場合
+    return BASIC_PARAM
+  else:
+    # 不可能な場合
+    return 0
 
 def createInitial() -> dict:
   initial = {}
@@ -148,7 +169,7 @@ def multiAction(target, number) -> dict:
 class montekarlo:
   def __init__(self):
     self.tree = {}
-  def play(self, playerSumCards:str, delerCards:str, player1D:bool) -> Dict[str, str]:
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay) -> Dict[str, str]:
     if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
       if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
         #ダブルダウンの可否で片方が存在していれば
@@ -165,10 +186,7 @@ class montekarlo:
         #targetValが初期値選定されたらそれを超えることはできないので、
         break
       if target['n'] == 0:
-        if not key  ==  'DOUBLE' or player1D == True:
-          val = 99999
-        else:
-          val = 0
+        val = initialPlay(playerSumCards, delerCards, player1D, key)
       else:
         ucb_cost = np.sqrt(2 * np.log(N))/ target['n']
         val = target['val'] + ucb_cost
@@ -265,7 +283,7 @@ class Game:
       result = "DRAW"
     return result
   
-  def playGame(self, player1:player or montekarlo) -> Tuple[list, int]:
+  def playGame(self, player1:player or montekarlo, initialPlay=simpleInitialPlay) -> Tuple[list, int]:
     # 1play
     deck = self.createDeck(self.decks)
     random.shuffle(deck)
@@ -295,7 +313,7 @@ class Game:
       return plyer1_select, value
     #playerの行動
     while True:
-      get: Dict[str, str] = player1.play(playerSum, openDelerSum, player1D)
+      get: Dict[str, str] = player1.play(playerSum, openDelerSum, player1D, initialPlay)
       plyer1_select.append(get)
       if get['action'] == 'HIT' or get['action'] == 'DOUBLE':
         card, deck = self.pickCard(deck)
@@ -353,21 +371,24 @@ if __name__ == '__main__':
     basicPlayer = basicStorategy()
     deckCount = 1
     game = Game(deckCount)
+    #initialPlayの設定
+    initialPlay = simpleInitialPlay
+    basicInitial = basicStorategyPlay
     # gameクラステスト
     # testGame = Game(deckCount)
     # print(testGame.calculate('1/11', 1))
     for i in range(1000):
-      player_select, result = game.playGame(player1)
+      player_select, result = game.playGame(player1,basicInitial)
       pres.append(result+pres[len(pres)-1])
     for i in range(50000):
       # 50000回繰り返す
-      player_select1, result1 = game.playGame(player1)
+      player_select1, result1 = game.playGame(player1,basicInitial)
       player1.simpleLearning(player_select1, result1*100)
       player_select2, result2 = game.playGame(player2)
       player2.learning(player_select2, result2*100)
     for i in range(1000):
       # 100回繰り返す
-      player_select1, result1 = game.playGame(player1)
+      player_select1, result1 = game.playGame(player1,basicInitial)
       player_select2, result2 = game.playGame(player2)
       _, result3 = game.playGame(basicPlayer)
       logs.append(result1+logs[len(logs)-1])

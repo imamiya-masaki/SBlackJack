@@ -83,7 +83,7 @@ class basicStorategy:
     return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
   def __init__(self):
     self.tree = {}
-  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=None) -> Dict[str, str]:
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=None, fieldInfo=None) -> Dict[str, str]:
     soft = False
     if len(playerSumCards.split('/')) >= 2:
       soft = True
@@ -151,6 +151,8 @@ def createInitial() -> dict:
   initial['DOUBLE'] = {}
   initial['DOUBLE']['n'] = 0
   initial['DOUBLE']['val'] = 0
+  initial['CHANGE']['n'] = 0
+  initial['CHANGE']['val'] = 0
   return initial
 
 def multiAction(target, number) -> dict:
@@ -171,7 +173,7 @@ def multiAction(target, number) -> dict:
 class montekarlo:
   def __init__(self):
     self.tree = {}
-  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay, fieldInfo={}) -> Dict[str, str]:
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay, fieldInfo=None) -> Dict[str, str]:
     if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
       if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
         #ダブルダウンの可否で片方が存在していれば
@@ -230,17 +232,54 @@ class montekarlo:
 class montekarlo_withFieldInfo:
   def __init__(self):
     self.tree = {}
-  def getFieldInfoValue(self, key: str, fieldInfo: dict, action: str) -> Tuple[int, bool]:
+  def euclidean_distance(self, x, y)-> float:   
+    return np.sqrt(np.sum((x - y) ** 2))
+  def list_key(self, a: list) -> str:
+    get = [str(i) for i in a]
+    return '-'.join(get)
+  def seisoku(self, val: float, min: float, max: float)->float:
+    if max - min == 0:
+      return val
+    return (val - min)/(max-min)
+  def getFieldInfoValue(self, key: str, fieldInfo: list, action: str) -> Tuple[int, bool]:
     if key not in self.tree:
       # keyはself.treeの中にある前提
       print('error getFieldInfoValue')
       return 0, False
-    if 'fieldInfo' not in self.tree[key]:
+    if action not in self.tree[key]:
+      self.tree[key][action] = {}
+    if 'fieldInfo' not in self.tree[key][action]:
       #fieldInfoにベクトルを格納していく
-      self.tree[key]['fieldInfo'] = []
+      self.tree[key][action]['fieldInfo'] = {}
     flag = False
-    val = 0
-  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay, fieldInfo={}) -> Dict[str, str]:
+    donpisita = False
+    val = float(0)
+    values = []
+    gets = []
+    for val_key in self.tree[key][action]['fieldInfo']:
+      #1 ~ 13 -> 0 ~ 12として扱う
+      flag = True
+      spl = [int(a) for a in val_key.split('-')]
+      get = float(self.tree[key][action]['fieldInfo'][val_key])
+      yuku = self.euclidean_distance(np.array(spl), np.array(fieldInfo))
+      values.append(yuku)
+      gets.append(get)
+    if len(values) == 0:
+      return 0,False
+    max_val = 0
+    min_val = 0
+    if min(values) != 0:
+      max_val = 1/min(values)
+    if max(values) != 0:
+      min_val = 1/max(values)
+    if min(values) == 0 or max_val > 100:
+      max_val = 100
+    if max(values) == 0 or min_val > 10:
+      min_val = 10
+    for index, v in enumerate(values):
+      val += gets[index]*self.seisoku(v,min_val, max_val)
+    return val/len(values),flag
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay, fieldInfo=[0,0,0,0,0,0,0,0,0,0,0,0,0]) -> Dict[str, str]:
     if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
       if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
         #ダブルダウンの可否で片方が存在していれば
@@ -253,49 +292,53 @@ class montekarlo_withFieldInfo:
     N = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)]['N']
     for key in ['HIT', 'STAY', 'DOUBLE']:
       target = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)][key]
-      if targetVal >= 99999:
-        #targetValが初期値選定されたらそれを超えることはできないので、
-        break
       if target['n'] == 0:
         val = initialPlay(playerSumCards, delerCards, player1D, key)
       else:
         ucb_cost = np.sqrt(2 * np.log(N))/ target['n']
-        val = target['val'] + ucb_cost
+        val_g,flag = self.getFieldInfoValue(str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D), fieldInfo, key)
+        if flag == False:
+          val_g = target['val']
+        val = val_g + ucb_cost
       if targetVal < val:
         targetVal = val
         targetKey = key
-    return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)}
-def simpleLearning(self, actions: list, reward: int):
-  for info in actions:
-    action = info['action']
-    state = info['state']
-    if state not in self.tree:
-      self.tree[state] = createInitial()
-    self.tree[state][action]['val'] += reward
-    self.tree[state][action]['n'] += 1
-    self.tree[state]['N'] += 1
-  return
-def learning(self, actions: list, reward: int):
-  self.simpleLearning(actions, reward) #まずシンプルラーニングはする
-  if actions == []:
-    # ディーラーblackjackの時は計算しない
+    return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D), 'fieldInfo': fieldInfo}
+  def simpleLearning(self, actions: list, reward: int):
+    for info in actions:
+      action = info['action']
+      state = info['state']
+      fieldInfo = info['fieldInfo']
+      if state not in self.tree:
+        self.tree[state] = createInitial()
+      self.tree[state][action]['val'] += reward
+      self.tree[state][action]['n'] += 1
+      self.tree[state]['N'] += 1
+      if 'fieldInfo' in self.tree[state][action]:
+        if self.list_key(fieldInfo) not in self.tree[state][action]['fieldInfo']:
+          self.tree[state][action]['fieldInfo'][self.list_key(fieldInfo)] = 0
+        self.tree[state][action]['fieldInfo'][self.list_key(fieldInfo)] += reward
     return
-  if actions[0]['state'] not in self.tree:
-    self.tree[actions[0]['state']] = createInitial()
-  for index in range(len(actions)-1):
-    preInfo = actions[index]
-    nextInfo = actions[index+1]
-    preAction = preInfo['action']
-    nextAction = nextInfo['action']
-    preState = preInfo['state']
-    nextState = nextInfo['state']
-    if nextState not in self.tree:
-      self.tree[nextState] = createInitial()
-    self.tree[preState][preAction]['val'] += (self.tree[nextState][nextAction]['val']/self.tree[nextState][nextAction]['n'])
-  return
-
-def output_learnData(self):
-  return self.tree
+  def learning(self, actions: list, reward: int):
+    self.simpleLearning(actions, reward) #まずシンプルラーニングはする
+    if actions == []:
+      # ディーラーblackjackの時は計算しない
+      return
+    if actions[0]['state'] not in self.tree:
+      self.tree[actions[0]['state']] = createInitial()
+    for index in range(len(actions)-1):
+      preInfo = actions[index]
+      nextInfo = actions[index+1]
+      preAction = preInfo['action']
+      nextAction = nextInfo['action']
+      preState = preInfo['state']
+      nextState = nextInfo['state']
+      if nextState not in self.tree:
+        self.tree[nextState] = createInitial()
+      self.tree[preState][preAction]['val'] += (self.tree[nextState][nextAction]['val']/self.tree[nextState][nextAction]['n'])
+    return
+  def output_learnData(self):
+    return self.tree
 class Game:
   def __init__(self, decks, player1=None):
     self.decks = decks
@@ -354,7 +397,7 @@ class Game:
       result = "DRAW"
     return result
   
-  def playGame(self, player1:player or montekarlo, initialPlay=simpleInitialPlay) -> Tuple[list, int]:
+  def playGame(self, player1:player or montekarlo, initialPlay=simpleInitialPlay, displayCardCnt=10) -> Tuple[list, int]:
     # 1play
     deck = self.createDeck(self.decks)
     random.shuffle(deck)
@@ -364,8 +407,13 @@ class Game:
     player1D = False #ダブルダウンしたかどうか
     playerBJ = False #playerブラックジャック
     delerCards = []
+    displayCards = []
     player1Cards,deck = self.pickAndInsertCards(deck, player1Cards, 2)
     delerCards,deck = self.pickAndInsertCards(deck, delerCards, 2)
+    displayCards, deck = self.pickAndInsertCards(deck, displayCards, displayCardCnt)
+    displayMemo = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+    for dCard in displayCards:
+      displayMemo[dCard-1] += 1
     openDelerCard = [delerCards[0]]
     playerSum = self.ini_sum(player1Cards)
     delerSum = self.ini_sum(delerCards)
@@ -380,16 +428,16 @@ class Game:
       #ディーラーが21ではなくて、playerが21なら
       value = 1.5 #playerがBJの時の返りはボーナス付き
       if player1D:
-        value *= 2
+        value *= 10
       return plyer1_select, value
     #playerの行動
     while True:
-      get: Dict[str, str] = player1.play(playerSum, openDelerSum, player1D, initialPlay)
+      get: Dict[str, str, str] = player1.play(playerSum, openDelerSum, player1D, initialPlay, displayMemo)
       plyer1_select.append(get)
       if get['action'] == 'HIT' or get['action'] == 'DOUBLE':
         card, deck = self.pickCard(deck)
         playerSum, isSafe = self.calculate(playerSum, card)
-        if isSafe is False:
+        if isSafe == False:
           result = "LOSE"
         if get['action'] == 'DOUBLE':
           player1D = True
@@ -403,7 +451,7 @@ class Game:
         if get['action'] == 'HIT':
           card, deck = self.pickCard(deck)
           delerSum, isSafe = self.calculate(delerSum, card)
-          if isSafe is False:
+          if isSafe == False:
             # プレイヤーが負けていない状態で、ディーラーがバーストしたら、勝ち
             result = "WIN"
         if get['action'] == 'STAY' or result == 'WIN':
@@ -416,8 +464,8 @@ class Game:
       reward = 1
     elif result == "LOSE":
       reward = -1
-    if player1D is True:
-      reward *= 2
+    if player1D == True:
+      reward *= 10
     return plyer1_select, reward
 
   def ini_sum(self,cards: list) -> str:
@@ -433,14 +481,16 @@ if __name__ == '__main__':
     nextLogs = [] #learning強化
     basicLogs = [] #basicStorategy
     pres = []
+    newnewLogs = []
     logs.append(player1Sum)
     nextLogs.append(player1Sum)
     basicLogs.append(player1Sum)
+    newnewLogs.append(player1Sum)
     pres.append(player1Sum)
     player1 = montekarlo()
     player2 = montekarlo()
     basicPlayer = basicStorategy()
-    deckCount = 1
+    deckCount = (1/2)
     game = Game(deckCount)
     #initialPlayの設定
     initialPlay = simpleInitialPlay
@@ -451,7 +501,7 @@ if __name__ == '__main__':
     for i in range(1000):
       player_select, result = game.playGame(player1,initialPlay)
       pres.append(result+pres[len(pres)-1])
-    for i in range(50000):
+    for i in range(10000):
       # 50000回繰り返す
       player_select1, result1 = game.playGame(player1,initialPlay)
       player1.simpleLearning(player_select1, result1*100)

@@ -3,8 +3,13 @@
 import random
 import numpy as np
 import typing as tp
+import json
 from typing import Tuple, Dict
-from matplotlib import pyplot
+from matplotlib import pyplot, rcParams
+from matplotlib.ticker import (MultipleLocator, AutoMinorLocator)
+rcParams['font.family'] = 'sans-serif'
+rcParams['font.sans-serif'] = ['Hiragino Maru Gothic Pro', 'Yu Gothic', 'Meirio', 'Takao', 'IPAexGothic', 'IPAPGothic', 'VL PGothic', 'Noto Sans CJK JP']
+import datetime
 
 hardHandDict = {
   #エースはindex9として扱い、以降,2,3,4,.. -> 0,1,2,...として扱う
@@ -46,7 +51,7 @@ softHandDict = {
   '20': [0,0,0,0,0,0,0,0,0,0],
   '21': [0,0,0,0,0,0,0,0,0,0],
 }
-
+CHANGE_COST = 0.5
 class dealerClass:
   #　一応ディーラーもクラスで分けておく。
   def __init__(self):
@@ -83,7 +88,7 @@ class basicStorategy:
     return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
   def __init__(self):
     self.tree = {}
-  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=None, fieldInfo=None) -> Dict[str, str]:
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, changeSumCost=0, initialPlay=None, fieldInfo=None) -> Dict[str, str]:
     soft = False
     if len(playerSumCards.split('/')) >= 2:
       soft = True
@@ -119,7 +124,7 @@ class basicStorategy:
 
 def simpleInitialPlay (playerSumCards:str, delerCards:str, player1D:bool, key: str) -> int:
   val = 0
-  if not key  ==  'DOUBLE' or player1D == True:
+  if not (key  ==  'DOUBLE' and player1D == True):
     val = 99999
   else:
     val = 0
@@ -143,14 +148,18 @@ def createInitial() -> dict:
   initial = {}
   initial['N'] = 0
   initial['HIT'] = {}
-  initial['HIT']['n'] = 0
-  initial['HIT']['val'] = 0
+  initial['HIT']['n'] = 10
+  initial['HIT']['val'] = 10
   initial['STAY'] = {}
-  initial['STAY']['n'] = 0
-  initial['STAY']['val'] = 0
+  initial['STAY']['n'] = 10
+  initial['STAY']['val'] = 10
   initial['DOUBLE'] = {}
-  initial['DOUBLE']['n'] = 0
-  initial['DOUBLE']['val'] = 0
+  initial['DOUBLE']['n'] = 10
+  initial['DOUBLE']['val'] = 10
+  initial['EQUAL'] = {}
+  initial['EQUAL']['n'] = 0
+  initial['EQUAL']['val'] = 0
+  initial['CHANGE'] = {}
   initial['CHANGE']['n'] = 0
   initial['CHANGE']['val'] = 0
   return initial
@@ -167,13 +176,28 @@ def multiAction(target, number) -> dict:
   action['DOUBLE'] = {}
   action['DOUBLE']['n'] = target['DOUBLE']['n']
   action['DOUBLE']['val'] = target['DOUBLE']['val']*number
+  action['EQUAL'] = {}
+  action['EQUAL']['n'] = target['EQUAL']['n']
+  action['EQUAL']['val'] = target['EQUAL']['val']*number
+  action['CHANGE'] = {}
+  action['CHANGE']['n'] = target['CHANGE']['n']
+  action['CHANGE']['val'] = target['CHANGE']['val']*number
   return action
 
-
+def getStateValue(valInfo) -> float:
+  value = float(0)
+  for key in ['HIT', 'STAY', 'DOUBLE', 'EQUAL', 'CHANGE']:
+    target = valInfo[key]
+    ucb_cost = np.sqrt(2 * np.log(valInfo['N']))/ target['n']
+    val = target['val'] + ucb_cost
+    if value < val:
+      value = val
+  return value
 class montekarlo:
-  def __init__(self):
+  def __init__(self, actions = ['HIT', 'STAY', 'DOUBLE', 'EQUAL', 'CHANGE']):
     self.tree = {}
-  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay, fieldInfo=None) -> Dict[str, str]:
+    self.actions = actions
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, changeSumCost=0, initialPlay=simpleInitialPlay, fieldInfo=None) -> Dict[str, str]:
     if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
       if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
         #ダブルダウンの可否で片方が存在していれば
@@ -184,8 +208,10 @@ class montekarlo:
     targetVal: int = 0
     targetKey: str = 'HIT'
     N = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)]['N']
-    for key in ['HIT', 'STAY', 'DOUBLE']:
+    for key in self.actions:
       target = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)][key]
+      if changeSumCost == 1 and key == 'CHANGE':
+        continue
       if targetVal >= 99999:
         #targetValが初期値選定されたらそれを超えることはできないので、
         break
@@ -198,10 +224,29 @@ class montekarlo:
         targetVal = val
         targetKey = key
     return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)}
-  def simpleLearning(self, actions: list, reward: int):
+  def simpleLearning(self, actions: list, reward: float):
+    actions.reverse()
+    changeMode = False
+    changeCnt = 0
     for info in actions:
+      if info['action'] == 'CHANGE':
+        changeCnt += 1
+    reward += changeCnt*CHANGE_COST
+    for index, info in enumerate(actions):
       action = info['action']
       state = info['state']
+      if action == 'CHANGE':
+        #CHANGEなら別処理
+          changeMode = True
+          state = actions[index]['state']
+          nextState = actions[index-1]['state']
+          action = actions[index]['action']
+          nextAction = actions[index-1]['action']
+          self.tree[state]['N'] += 1
+          self.tree[state][action]['n'] += 1
+          self.tree[state][action]['val'] += (self.tree[nextState][nextAction]['val']/self.tree[nextState][nextAction]['n']) - CHANGE_COST
+      if changeMode:
+        continue
       if state not in self.tree:
         self.tree[state] = createInitial()
       self.tree[state][action]['val'] += reward
@@ -228,7 +273,11 @@ class montekarlo:
     return
 
   def output_learnData(self):
-    return self.tree
+    output = []
+    keys = list(self.tree.keys())
+    for key in keys:
+      output.append(key +':'+json.dumps(self.tree[key]))
+    return '\n'.join(output)
 class montekarlo_withFieldInfo:
   def __init__(self):
     self.tree = {}
@@ -279,7 +328,7 @@ class montekarlo_withFieldInfo:
     for index, v in enumerate(values):
       val += gets[index]*self.seisoku(v,min_val, max_val)
     return val/len(values),flag
-  def play(self, playerSumCards:str, delerCards:str, player1D:bool, initialPlay=simpleInitialPlay, fieldInfo=[0,0,0,0,0,0,0,0,0,0,0,0,0]) -> Dict[str, str]:
+  def play(self, playerSumCards:str, delerCards:str, player1D:bool, changeSumCost=0, initialPlay=simpleInitialPlay, fieldInfo=[0,0,0,0,0,0,0,0,0,0,0,0,0]) -> Dict[str, str]:
     if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
       if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
         #ダブルダウンの可否で片方が存在していれば
@@ -290,7 +339,7 @@ class montekarlo_withFieldInfo:
     targetVal: int = 0
     targetKey: str = 'HIT'
     N = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)]['N']
-    for key in ['HIT', 'STAY', 'DOUBLE']:
+    for key in ['HIT', 'STAY', 'DOUBLE', 'EQUAL']:
       target = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)][key]
       if target['n'] == 0:
         val = initialPlay(playerSumCards, delerCards, player1D, key)
@@ -345,8 +394,8 @@ class Game:
     if player1 != None:
       self.player1 = {}
       self.player1.sum = 0
-  def createDeck(self, decks):
-    cards = [i for i in [1,2,3,4,5,6,7,8,9,10,11,12,13]]*int(float(4*decks))
+  def createDeck(self):
+    cards = [i for i in [1,2,3,4,5,6,7,8,9,10,11,12,13]]*int(float(4*self.decks))
     return cards
   def test(self):
     print('game')
@@ -397,10 +446,14 @@ class Game:
       result = "DRAW"
     return result
   
-  def playGame(self, player1:player or montekarlo, initialPlay=simpleInitialPlay, displayCardCnt=10) -> Tuple[list, int]:
+  def playGame(self, player1:player or montekarlo, initialPlay=simpleInitialPlay, displayCardCnt=0, initialDeck=[]) -> Tuple[list, int]:
     # 1play
-    deck = self.createDeck(self.decks)
-    random.shuffle(deck)
+    deck = []
+    if len(initialDeck) == 0:
+      deck = self.createDeck()
+      random.shuffle(deck)
+    else:
+      deck = [a for a in initialDeck]
     result: str = "" #引き分け,勝ち,負け,etc... 
     player1Cards = []
     dealer = dealerClass()
@@ -427,12 +480,12 @@ class Game:
     if result is not "LOSE" and self.max(playerSum) == 21:
       #ディーラーが21ではなくて、playerが21なら
       value = 1.5 #playerがBJの時の返りはボーナス付き
-      if player1D:
-        value *= 10
       return plyer1_select, value
     #playerの行動
+    equal = False
+    changeSumCost = 0
     while True:
-      get: Dict[str, str, str] = player1.play(playerSum, openDelerSum, player1D, initialPlay, displayMemo)
+      get: Dict[str, str, str] = player1.play(playerSum, openDelerSum, player1D, changeSumCost=changeSumCost, initialPlay=initialPlay, fieldInfo=displayMemo)
       plyer1_select.append(get)
       if get['action'] == 'HIT' or get['action'] == 'DOUBLE':
         card, deck = self.pickCard(deck)
@@ -441,6 +494,14 @@ class Game:
           result = "LOSE"
         if get['action'] == 'DOUBLE':
           player1D = True
+      if get['action'] == 'EQUAL':
+        equal = True
+        break
+      if get['action'] == 'CHANGE':
+        changeSumCost += CHANGE_COST
+        pCards = []
+        pCards, deck = self.pickAndInsertCards(deck, pCards, 2)
+        playerSum = self.ini_sum(pCards)
       if get['action'] == 'STAY' or result == 'LOSE' or player1D == True:
         #playerがstayを選択か、(バースト等して)負けかダブルダウンを選択したら、プレイヤーの行動は終了
         break
@@ -464,8 +525,15 @@ class Game:
       reward = 1
     elif result == "LOSE":
       reward = -1
+    if equal == True and reward == 0:
+      #equalルール
+      reward = 8
+    elif equal == True and reward != 0:
+      reward = -1
     if player1D == True:
-      reward *= 10
+      reward *= 2
+    if changeSumCost > 0:
+      reward -= changeSumCost
     return plyer1_select, reward
 
   def ini_sum(self,cards: list) -> str:
@@ -473,24 +541,51 @@ class Game:
     for card in cards:
       result, flag = self.calculate(result, card)
     return result
-
+class BJLog:
+  def __init__(self, name):
+    self.name = name
+    self.results = []
+    self.actions = []
+    self.states = {}
+  def createX(self, list) -> np.ndarray:
+    return np.array([ i for i in range(len(list)) ])
+  def push(self, a, actions=[]) -> None:
+    self.results.append(a)
+    for action in actions:
+      state = action['state']
+      if state not in self.states:
+        self.states[state] = 0
+      self.states[state] += a
+  def summaryGraph(self, ax, color) -> None:
+    result = 0
+    logs = []
+    logs.append(result)
+    for a in self.results:
+      logs.append(a+logs[len(logs)-1])
+    ax.plot(self.createX(logs), np.array(logs), label=self.name)
+  def increaseGraph(self, ax: pyplot.Axes, color) -> None:
+    targetList = list(self.states.keys())
+    ax.bar(np.array(targetList), np.array(list(self.states.values())), label=self.name, width=1.5)
+  def targetState(self, index):
+    #increaseGraphでindex -> stateのメモカをしているので
+    return self.states.keys()[index]
 
 if __name__ == '__main__':
     player1Sum = 0 # player0の勝ち星　グラフよう
-    logs = [] # playerのログをとる
-    nextLogs = [] #learning強化
-    basicLogs = [] #basicStorategy
-    pres = []
-    newnewLogs = []
-    logs.append(player1Sum)
-    nextLogs.append(player1Sum)
-    basicLogs.append(player1Sum)
-    newnewLogs.append(player1Sum)
-    pres.append(player1Sum)
+    logs = BJLog('通常のモンテカルロ木') # playerのログをとる
+    nextLogs = BJLog('ベーシックストラテジーを学習に取り入れたモンテカルロ木') #learning強化
+    basicLogs = BJLog('ベーシックストラテジー') #basicStorategy
+    pres = BJLog('学習していないモンテカルロ木')
+    newnewLogs = BJLog('newnewLogs')
+    noChangeAndEqualLog = BJLog('CHANGEとEQUALがない【ベーシックストラテジーを学習に取り入れたモンテカルロ木】')
+    noChangeAndEqualLogWeak = BJLog('CHANGEとEQUALがない【通常のモンテカルロ木】')
     player1 = montekarlo()
     player2 = montekarlo()
+    player3 = montekarlo()
     basicPlayer = basicStorategy()
-    deckCount = (1/2)
+    noChangeAndEqual = montekarlo(actions=['HIT', 'STAY', 'DOUBLE'])
+    noChangeAndEqual_weak = montekarlo(actions=['HIT', 'STAY', 'DOUBLE'])
+    deckCount = 1
     game = Game(deckCount)
     #initialPlayの設定
     initialPlay = simpleInitialPlay
@@ -498,29 +593,74 @@ if __name__ == '__main__':
     # gameクラステスト
     # testGame = Game(deckCount)
     # print(testGame.calculate('1/11', 1))
-    for i in range(1000):
+    for i in range(0000):
       player_select, result = game.playGame(player1,initialPlay)
-      pres.append(result+pres[len(pres)-1])
-    for i in range(10000):
-      # 50000回繰り返す
-      player_select1, result1 = game.playGame(player1,initialPlay)
-      player1.simpleLearning(player_select1, result1*100)
-      player_select2, result2 = game.playGame(player2)
-      player2.learning(player_select2, result2*100)
+      pres.push(result)
+    print('done:pre')
+    for i in range(500000):
+      # 10000回繰り返す
+      decks = game.createDeck()
+      random.shuffle(decks)
+      player_select1, result1 = game.playGame(player1,initialPlay,0,decks)
+      player1.simpleLearning(player_select1, result1*1)
+      player_select2, result2 = game.playGame(basicPlayer, initialPlay,0,decks)
+      player2.simpleLearning(player_select2, result2*1)
+      player_selectChange, result3 = game.playGame(basicPlayer, initialPlay,0,decks)
+      noChangeAndEqual.simpleLearning(player_selectChange, result3)
+      player_selectChange_week, result4 = game.playGame(noChangeAndEqual_weak, initialPlay,0,decks)
+      noChangeAndEqual_weak.simpleLearning(player_selectChange_week, result4)
+      # player_select3, result3 = game.playGame(basicPlayer, initialPlay)
+      # player3.learning(player_select3, result3*1)
+    for i in range(500000):
+      # 10000回繰り返す
+      decks = game.createDeck()
+      random.shuffle(decks)
+      player_select1, result1 = game.playGame(player1,initialPlay,0,decks)
+      player1.simpleLearning(player_select1, result1*1)
+      player_select2, result2 = game.playGame(player2, initialPlay,0,decks)
+      player2.simpleLearning(player_select2, result2*1)
+      player_selectChange, nochange_result = game.playGame(noChangeAndEqual, initialPlay,0,decks)
+      noChangeAndEqual.simpleLearning(player_selectChange, nochange_result)
+      player_selectChange_week, result4 = game.playGame(noChangeAndEqual_weak, initialPlay,0,decks)
+      noChangeAndEqual_weak.simpleLearning(player_selectChange_week, result4)
+      # player_select3, result3 = game.playGame(basicPlayer, initialPlay)
+      # player3.learning(player_select3, result3*1)
+    print('done:learning')
     for i in range(1000):
-      # 100回繰り返す
-      player_select1, result1 = game.playGame(player1,basicInitial)
-      player_select2, result2 = game.playGame(player2, basicInitial)
-      _, result3 = game.playGame(basicPlayer)
-      logs.append(result1+logs[len(logs)-1])
-      nextLogs.append(result2+nextLogs[len(nextLogs)-1])
-      basicLogs.append(result3 + basicLogs[len(basicLogs)-1])
-    x_1 = np.array([ i for i in range(len(pres)) ])
-    x_2 = np.array([ i for i in range(len(logs)) ])
-    x_3 = np.array([ i for i in range(len(nextLogs)) ])
-    x_4 = np.array([ i for i in range(len(basicLogs)) ])
-    pyplot.plot(x_1, np.array(pres), color='yellow')
-    pyplot.plot(x_2, np.array(logs), color='red')
-    pyplot.plot(x_3, np.array(nextLogs), color='blue')
-    pyplot.plot(x_4, np.array(basicLogs), color='orange')
+      # 10000回繰り返す
+      decks = game.createDeck()
+      random.shuffle(decks)
+      player_select1, result1 = game.playGame(player1,initialPlay,0,decks)
+      player_select2, result2 = game.playGame(player2, initialPlay,0,decks)
+      player_selectChange, nochange_result = game.playGame(noChangeAndEqual, initialPlay,0,decks)
+      player_selectChange_week, nochange_result_weak = game.playGame(noChangeAndEqual_weak, initialPlay,0,decks)
+      player_basic, result3 = game.playGame(basicPlayer)
+      logs.push(result1, player_select1)
+      nextLogs.push(result2, player_select2)
+      basicLogs.push(result3, player_basic)
+      noChangeAndEqualLog.push(nochange_result, player_selectChange)
+      noChangeAndEqualLogWeak.push(nochange_result_weak, player_selectChange_week)
+    print('done:write')
+    fig, ax = pyplot.subplots()
+    pres.summaryGraph(ax,color='yellow')
+    logs.summaryGraph(ax,color='red')
+    nextLogs.summaryGraph(ax,color='blue')
+    basicLogs.summaryGraph(ax,color='orange')
+    noChangeAndEqualLog.summaryGraph(ax,color='pink')
+    noChangeAndEqualLogWeak.summaryGraph(ax,color='green')
+    f = open('player2Data', 'w')
+    f.write(player2.output_learnData())
+    f = open('player1Data', 'w')
+    f.write(player1.output_learnData())
+    f = open('noChangeAndEqualData', 'w')
+    f.write(noChangeAndEqual.output_learnData())
+    dt_now = datetime.datetime.now()
+    fig.legend()
+    fig.savefig('outputSummaryGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
+    fig2, ax2 = pyplot.subplots()
+    pyplot.xticks(rotation=90)
+    logs.increaseGraph(ax2, color='red')
+    noChangeAndEqualLogWeak.increaseGraph(ax2, color='blue')
+    fig2.legend()
+    fig2.savefig('outputIncreaseGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
     pyplot.show()

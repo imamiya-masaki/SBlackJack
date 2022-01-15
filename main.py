@@ -9,6 +9,7 @@ from matplotlib import pyplot, rcParams
 from matplotlib.ticker import (MultipleLocator, AutoMinorLocator)
 rcParams['font.family'] = 'sans-serif'
 rcParams['font.sans-serif'] = ['Hiragino Maru Gothic Pro', 'Yu Gothic', 'Meirio', 'Takao', 'IPAexGothic', 'IPAPGothic', 'VL PGothic', 'Noto Sans CJK JP']
+rcParams["figure.figsize"] = (12, 6)
 import datetime
 
 hardHandDict = {
@@ -92,7 +93,7 @@ class basicStorategy:
     soft = False
     if len(playerSumCards.split('/')) >= 2:
       soft = True
-    state = str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)
+    state = str(playerSumCards)+'-'+str(delerCards)
     playerNum = self.max(playerSumCards) # maxで考える
     action = 'STAY'
     if playerNum == 21:
@@ -198,18 +199,14 @@ class montekarlo:
     self.tree = {}
     self.actions = actions
   def play(self, playerSumCards:str, delerCards:str, player1D:bool, changeSumCost=0, initialPlay=simpleInitialPlay, fieldInfo=None) -> Dict[str, str]:
-    if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
-      if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
-        #ダブルダウンの可否で片方が存在していれば
-        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = multiAction(self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D)], (1))
-      else:
+    if str(playerSumCards)+'-'+str(delerCards) not in self.tree:
         #初期化
-        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = createInitial()
+        self.tree[str(playerSumCards)+'-'+str(delerCards)] = createInitial()
     targetVal: int = 0
     targetKey: str = 'HIT'
-    N = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)]['N']
+    N = self.tree[str(playerSumCards)+'-'+str(delerCards)]['N']
     for key in self.actions:
-      target = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)][key]
+      target = self.tree[str(playerSumCards)+'-'+str(delerCards)][key]
       if changeSumCost == 1 and key == 'CHANGE':
         continue
       if targetVal >= 99999:
@@ -223,7 +220,7 @@ class montekarlo:
       if targetVal < val:
         targetVal = val
         targetKey = key
-    return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)}
+    return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards)}
   def simpleLearning(self, actions: list, reward: float):
     actions.reverse()
     changeMode = False
@@ -329,30 +326,30 @@ class montekarlo_withFieldInfo:
       val += gets[index]*self.seisoku(v,min_val, max_val)
     return val/len(values),flag
   def play(self, playerSumCards:str, delerCards:str, player1D:bool, changeSumCost=0, initialPlay=simpleInitialPlay, fieldInfo=[0,0,0,0,0,0,0,0,0,0,0,0,0]) -> Dict[str, str]:
-    if str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D) not in self.tree:
+    if str(playerSumCards)+'-'+str(delerCards) not in self.tree:
       if str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D) in self.tree:
         #ダブルダウンの可否で片方が存在していれば
-        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = multiAction(self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D)], (1))
+        self.tree[str(playerSumCards)+'-'+str(delerCards)] = multiAction(self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(not player1D)], (1))
       else:
         #初期化
-        self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)] = createInitial()
+        self.tree[str(playerSumCards)+'-'+str(delerCards)] = createInitial()
     targetVal: int = 0
     targetKey: str = 'HIT'
-    N = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)]['N']
+    N = self.tree[str(playerSumCards)+'-'+str(delerCards)]['N']
     for key in ['HIT', 'STAY', 'DOUBLE', 'EQUAL']:
-      target = self.tree[str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D)][key]
+      target = self.tree[str(playerSumCards)+'-'+str(delerCards)][key]
       if target['n'] == 0:
         val = initialPlay(playerSumCards, delerCards, player1D, key)
       else:
         ucb_cost = np.sqrt(2 * np.log(N))/ target['n']
-        val_g,flag = self.getFieldInfoValue(str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D), fieldInfo, key)
+        val_g,flag = self.getFieldInfoValue(str(playerSumCards)+'-'+str(delerCards), fieldInfo, key)
         if flag == False:
           val_g = target['val']
         val = val_g + ucb_cost
       if targetVal < val:
         targetVal = val
         targetKey = key
-    return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards)+'-'+str(player1D), 'fieldInfo': fieldInfo}
+    return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards), 'fieldInfo': fieldInfo}
   def simpleLearning(self, actions: list, reward: int):
     for info in actions:
       action = info['action']
@@ -547,6 +544,8 @@ class BJLog:
     self.results = []
     self.actions = []
     self.states = {}
+  def getName (self) -> str:
+    return self.name
   def createX(self, list) -> np.ndarray:
     return np.array([ i for i in range(len(list)) ])
   def push(self, a, actions=[]) -> None:
@@ -566,6 +565,29 @@ class BJLog:
   def increaseGraph(self, ax: pyplot.Axes, color) -> None:
     targetList = list(self.states.keys())
     ax.bar(np.array(targetList), np.array(list(self.states.values())), label=self.name, width=1.5)
+  def increasePickUp(self, b: dict) -> dict:
+    # bよりも高い場合pickupする
+    output = {}
+    for key, value in self.states.items():
+      if key in b:
+        if value > b[key]:
+          output[key] = value - b[key]
+    return output
+  def pickUpOutput(self, compareDiffDict, name='') -> tuple:
+    compareDiffDictTuples = sorted(compareDiffDict.items(), key=lambda x:x[1])
+    compareDiffDictTuples.reverse()
+    diff_x = []
+    diff_y = []
+    fileOutputDiff = {}
+    for x,y in compareDiffDictTuples:
+      diff_x.append(x)
+      diff_y.append(y)
+      fileOutputDiff[x] = y
+    f = open(name, 'w')
+    f.write(json.dumps(fileOutputDiff, indent=2))
+    return diff_x, diff_y
+  def getStates(self) -> dict:
+    return self.states
   def targetState(self, index):
     #increaseGraphでindex -> stateのメモカをしているので
     return self.states.keys()[index]
@@ -579,14 +601,19 @@ if __name__ == '__main__':
     newnewLogs = BJLog('newnewLogs')
     noChangeAndEqualLog = BJLog('CHANGEとEQUALがない【ベーシックストラテジーを学習に取り入れたモンテカルロ木】')
     noChangeAndEqualLogWeak = BJLog('CHANGEとEQUALがない【通常のモンテカルロ木】')
+    noChangeAndEqualLogWeakWithCHANGE = BJLog('EQUALがない【通常のモンテカルロ木】')
+    noChangeAndEqualLogWeakWithEQUAL = BJLog('CHANGEがない【通常のモンテカルロ木】')
     player1 = montekarlo()
     player2 = montekarlo()
     player3 = montekarlo()
     basicPlayer = basicStorategy()
     noChangeAndEqual = montekarlo(actions=['HIT', 'STAY', 'DOUBLE'])
     noChangeAndEqual_weak = montekarlo(actions=['HIT', 'STAY', 'DOUBLE'])
+    noChangeAndEqual_weak_with_CHANGE = montekarlo(actions=['HIT', 'STAY', 'DOUBLE', 'CHANGE'])
+    noChangeAndEqual_weak_with_EQUAL = montekarlo(actions=['HIT', 'STAY', 'DOUBLE', 'EQUAL'])
     deckCount = 1
     game = Game(deckCount)
+    doribun = 5000
     #initialPlayの設定
     initialPlay = simpleInitialPlay
     basicInitial = basicStorategyPlay
@@ -597,36 +624,52 @@ if __name__ == '__main__':
       player_select, result = game.playGame(player1,initialPlay)
       pres.push(result)
     print('done:pre')
-    for i in range(500000):
-      # 10000回繰り返す
+    for i in range(doribun):
       decks = game.createDeck()
       random.shuffle(decks)
       player_select1, result1 = game.playGame(player1,initialPlay,0,decks)
-      player1.simpleLearning(player_select1, result1*1)
+      player1.simpleLearning(player_select1, result1)
+
       player_select2, result2 = game.playGame(basicPlayer, initialPlay,0,decks)
-      player2.simpleLearning(player_select2, result2*1)
+      player2.simpleLearning(player_select2, result2)
+
       player_selectChange, result3 = game.playGame(basicPlayer, initialPlay,0,decks)
       noChangeAndEqual.simpleLearning(player_selectChange, result3)
+
       player_selectChange_week, result4 = game.playGame(noChangeAndEqual_weak, initialPlay,0,decks)
       noChangeAndEqual_weak.simpleLearning(player_selectChange_week, result4)
+
+      player_selectChange_week_CHANGE, result5 = game.playGame(noChangeAndEqual_weak_with_CHANGE, initialPlay,0,decks)
+      noChangeAndEqual_weak_with_CHANGE.simpleLearning(player_selectChange_week_CHANGE, result5)
+
+      player_selectChange_week_EQUAL, result6 = game.playGame(noChangeAndEqual_weak_with_EQUAL, initialPlay,0,decks)
+      noChangeAndEqual_weak_with_EQUAL.simpleLearning(player_selectChange_week_EQUAL, result6)
       # player_select3, result3 = game.playGame(basicPlayer, initialPlay)
       # player3.learning(player_select3, result3*1)
-    for i in range(500000):
-      # 10000回繰り返す
+    for i in range(doribun):
       decks = game.createDeck()
       random.shuffle(decks)
       player_select1, result1 = game.playGame(player1,initialPlay,0,decks)
       player1.simpleLearning(player_select1, result1*1)
+
       player_select2, result2 = game.playGame(player2, initialPlay,0,decks)
       player2.simpleLearning(player_select2, result2*1)
+
       player_selectChange, nochange_result = game.playGame(noChangeAndEqual, initialPlay,0,decks)
       noChangeAndEqual.simpleLearning(player_selectChange, nochange_result)
+
       player_selectChange_week, result4 = game.playGame(noChangeAndEqual_weak, initialPlay,0,decks)
       noChangeAndEqual_weak.simpleLearning(player_selectChange_week, result4)
+
+      player_selectChange_week_CHANGE, result5 = game.playGame(noChangeAndEqual_weak_with_CHANGE, initialPlay,0,decks)
+      noChangeAndEqual_weak_with_CHANGE.simpleLearning(player_selectChange_week_CHANGE, result5)
+
+      player_selectChange_week_EQUAL, result6 = game.playGame(noChangeAndEqual_weak_with_EQUAL, initialPlay,0,decks)
+      noChangeAndEqual_weak_with_EQUAL.simpleLearning(player_selectChange_week_EQUAL, result6)
       # player_select3, result3 = game.playGame(basicPlayer, initialPlay)
       # player3.learning(player_select3, result3*1)
     print('done:learning')
-    for i in range(1000):
+    for i in range(10000):
       # 10000回繰り返す
       decks = game.createDeck()
       random.shuffle(decks)
@@ -635,14 +678,18 @@ if __name__ == '__main__':
       player_selectChange, nochange_result = game.playGame(noChangeAndEqual, initialPlay,0,decks)
       player_selectChange_week, nochange_result_weak = game.playGame(noChangeAndEqual_weak, initialPlay,0,decks)
       player_basic, result3 = game.playGame(basicPlayer)
+      player_selectChange_week_CHANGE, result5 = game.playGame(noChangeAndEqual_weak_with_CHANGE, initialPlay,0,decks)
+      player_selectChange_week_EQUAL, result6 = game.playGame(noChangeAndEqual_weak_with_EQUAL, initialPlay,0,decks)
       logs.push(result1, player_select1)
       nextLogs.push(result2, player_select2)
       basicLogs.push(result3, player_basic)
       noChangeAndEqualLog.push(nochange_result, player_selectChange)
       noChangeAndEqualLogWeak.push(nochange_result_weak, player_selectChange_week)
+      noChangeAndEqualLogWeakWithCHANGE.push(result5, player_selectChange_week_CHANGE)
+      noChangeAndEqualLogWeakWithEQUAL.push(result6, player_selectChange_week_EQUAL)
     print('done:write')
     fig, ax = pyplot.subplots()
-    pres.summaryGraph(ax,color='yellow')
+    fig.suptitle(str(doribun*2)+'回学習させたモデルの結果')
     logs.summaryGraph(ax,color='red')
     nextLogs.summaryGraph(ax,color='blue')
     basicLogs.summaryGraph(ax,color='orange')
@@ -655,12 +702,29 @@ if __name__ == '__main__':
     f = open('noChangeAndEqualData', 'w')
     f.write(noChangeAndEqual.output_learnData())
     dt_now = datetime.datetime.now()
-    fig.legend()
+    fig.legend(bbox_to_anchor=(1, 0.25))
     fig.savefig('outputSummaryGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
     fig2, ax2 = pyplot.subplots()
     pyplot.xticks(rotation=90)
     logs.increaseGraph(ax2, color='red')
     noChangeAndEqualLogWeak.increaseGraph(ax2, color='blue')
+    compareDiffDictWeak = logs.increasePickUp(noChangeAndEqualLogWeak.getStates())
+    compareDiffDictWeakWithEqual = logs.increasePickUp(noChangeAndEqualLogWeakWithEQUAL.getStates())
+    compareDiffDictWeakWithCHANGE = logs.increasePickUp(noChangeAndEqualLogWeakWithCHANGE.getStates())
     fig2.legend()
     fig2.savefig('outputIncreaseGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
+    fig3, ax3 = pyplot.subplots(nrows=1, ncols=3)
+    pyplot.xticks(rotation=90)
+    diff_x_weak, diff_y_weak = logs.pickUpOutput(compareDiffDictWeak, '2ParamDiffData')
+    diff_x_weak_equal, diff_y_weak_equal = logs.pickUpOutput(compareDiffDictWeakWithEqual, '1ParamDiffDataWithEqual')
+    diff_x_weak_change, diff_y_weak_change = logs.pickUpOutput(compareDiffDictWeakWithCHANGE, '1ParamDiffDataWithCHANGE')
+    ax3[0].bar(np.array(list(diff_x_weak)), np.array(list(diff_y_weak)), width=1.0, tick_label=np.array(list(diff_x_weak)))
+    ax3[0].set_title(noChangeAndEqualLogWeak.getName())
+    ax3[1].bar(np.array(list(diff_x_weak_equal)), np.array(list(diff_y_weak_equal)), width=1.0, tick_label=np.array(list(diff_x_weak_equal)))
+    ax3[1].set_title(noChangeAndEqualLogWeakWithEQUAL.getName())
+    ax3[2].bar(np.array(list(diff_x_weak_change)), np.array(list(diff_y_weak_change)), width=1.0, tick_label=np.array(list(diff_x_weak_change)))
+    ax3[2].set_title(noChangeAndEqualLogWeakWithCHANGE.getName())
+    fig3.suptitle('通常のモンテカルロ木 > n のdiff')
+    fig3.legend()
+    fig3.savefig('outputDiffGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
     pyplot.show()

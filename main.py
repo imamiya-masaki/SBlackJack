@@ -544,6 +544,7 @@ class BJLog:
     self.results = []
     self.actions = []
     self.states = {}
+    self.cnt = {}
   def getName (self) -> str:
     return self.name
   def createX(self, list) -> np.ndarray:
@@ -554,7 +555,9 @@ class BJLog:
       state = action['state']
       if state not in self.states:
         self.states[state] = 0
+        self.cnt[state] = 0
       self.states[state] += a
+      self.cnt[state] += 1
   def summaryGraph(self, ax, color) -> None:
     result = 0
     logs = []
@@ -569,9 +572,9 @@ class BJLog:
     # bよりも高い場合pickupする
     output = {}
     for key, value in self.states.items():
-      if key in b:
-        if value > b[key]:
-          output[key] = value - b[key]
+      if key in b['state']:
+        if float(value/self.cnt[key]) - float(b['state'][key]/b['cnt'][key]) > 0 and float(self.cnt[key]) > 0:
+          output[key] = (value/self.cnt[key]) - (b['state'][key]/b['cnt'][key])
     return output
   def pickUpOutput(self, compareDiffDict, name='') -> tuple:
     compareDiffDictTuples = sorted(compareDiffDict.items(), key=lambda x:x[1])
@@ -587,7 +590,7 @@ class BJLog:
     f.write(json.dumps(fileOutputDiff, indent=2))
     return diff_x, diff_y
   def getStates(self) -> dict:
-    return self.states
+    return {'state': self.states, 'cnt': self.cnt}
   def targetState(self, index):
     #increaseGraphでindex -> stateのメモカをしているので
     return self.states.keys()[index]
@@ -613,7 +616,7 @@ if __name__ == '__main__':
     noChangeAndEqual_weak_with_EQUAL = montekarlo(actions=['HIT', 'STAY', 'DOUBLE', 'EQUAL'])
     deckCount = 1
     game = Game(deckCount)
-    doribun = 5000
+    doribun = 50000
     #initialPlayの設定
     initialPlay = simpleInitialPlay
     basicInitial = basicStorategyPlay
@@ -701,6 +704,10 @@ if __name__ == '__main__':
     f.write(player1.output_learnData())
     f = open('noChangeAndEqualData', 'w')
     f.write(noChangeAndEqual.output_learnData())
+    f = open('noChangeAndEqual_weak_with_CHANGEData', 'w')
+    f.write(noChangeAndEqual_weak_with_CHANGE.output_learnData())
+    f = open('noChangeAndEqual_weak_with_EQUALData', 'w')
+    f.write(noChangeAndEqual_weak_with_EQUAL.output_learnData())
     dt_now = datetime.datetime.now()
     fig.legend(bbox_to_anchor=(1, 0.25))
     fig.savefig('outputSummaryGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')

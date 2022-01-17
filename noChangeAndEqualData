@@ -1,280 +1,278 @@
-20-1/11:{"N": 896, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 906, "val": 565.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-1/11:{"N": 590, "HIT": {"n": 578, "val": -277.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 17, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-10:{"N": 3621, "HIT": {"n": 1785, "val": -1060.0}, "STAY": {"n": 1845, "val": -770.0}, "DOUBLE": {"n": 21, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-8:{"N": 146, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 156, "val": 44.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-8:{"N": 115, "HIT": {"n": 77, "val": 6.0}, "STAY": {"n": 21, "val": 3.0}, "DOUBLE": {"n": 47, "val": 2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-20-6:{"N": 895, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 905, "val": 608.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-6:{"N": 684, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 694, "val": 27.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-3:{"N": 145, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 155, "val": 69.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-10:{"N": 3556, "HIT": {"n": 3537, "val": -1824.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 24, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-20-8:{"N": 1052, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1062, "val": 835.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-10:{"N": 3371, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 3381, "val": 246.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-9:{"N": 854, "HIT": {"n": 841, "val": -404.0}, "STAY": {"n": 21, "val": -1.0}, "DOUBLE": {"n": 22, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-9:{"N": 97, "HIT": {"n": 75, "val": 1.0}, "STAY": {"n": 32, "val": 0.0}, "DOUBLE": {"n": 20, "val": 0.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-7:{"N": 817, "HIT": {"n": 796, "val": -294.0}, "STAY": {"n": 27, "val": -1.0}, "DOUBLE": {"n": 24, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-7:{"N": 99, "HIT": {"n": 109, "val": 14.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-8:{"N": 883, "HIT": {"n": 401, "val": -193.0}, "STAY": {"n": 490, "val": -184.0}, "DOUBLE": {"n": 22, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-3:{"N": 648, "HIT": {"n": 325, "val": -129.0}, "STAY": {"n": 337, "val": -93.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-10:{"N": 1658, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1668, "val": 340.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-5:{"N": 593, "HIT": {"n": 310, "val": -118.0}, "STAY": {"n": 297, "val": -13.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-3:{"N": 717, "HIT": {"n": 325, "val": -131.0}, "STAY": {"n": 392, "val": -102.0}, "DOUBLE": {"n": 30, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-7:{"N": 336, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 346, "val": 314.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-7:{"N": 759, "HIT": {"n": 728, "val": -178.0}, "STAY": {"n": 41, "val": -1.0}, "DOUBLE": {"n": 20, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-7:{"N": 827, "HIT": {"n": 378, "val": -138.0}, "STAY": {"n": 451, "val": -20.0}, "DOUBLE": {"n": 28, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-7:{"N": 183, "HIT": {"n": 157, "val": 6.0}, "STAY": {"n": 19, "val": 3.0}, "DOUBLE": {"n": 37, "val": 2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-3:{"N": 141, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 151, "val": 54.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-3:{"N": 48, "HIT": {"n": 58, "val": 18.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-1/11:{"N": 580, "HIT": {"n": 550, "val": -224.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 35, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-10:{"N": 3432, "HIT": {"n": 1705, "val": -1082.0}, "STAY": {"n": 1737, "val": -266.0}, "DOUBLE": {"n": 20, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-10:{"N": 3303, "HIT": {"n": 3270, "val": -1381.0}, "STAY": {"n": 29, "val": -1.0}, "DOUBLE": {"n": 34, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-2:{"N": 702, "HIT": {"n": 392, "val": -199.0}, "STAY": {"n": 322, "val": -38.0}, "DOUBLE": {"n": 18, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-6:{"N": 331, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 341, "val": 214.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-9:{"N": 828, "HIT": {"n": 816, "val": -443.0}, "STAY": {"n": 23, "val": -1.0}, "DOUBLE": {"n": 19, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-9:{"N": 794, "HIT": {"n": 771, "val": -273.0}, "STAY": {"n": 37, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-7:{"N": 802, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 812, "val": 468.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-7:{"N": 104, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 114, "val": 52.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-3:{"N": 29, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 39, "val": 34.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-3:{"N": 119, "HIT": {"n": 118, "val": 5.0}, "STAY": {"n": 16, "val": 4.0}, "DOUBLE": {"n": 15, "val": 4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-3:{"N": 114, "HIT": {"n": 115, "val": 14.0}, "STAY": {"n": 11, "val": 9.0}, "DOUBLE": {"n": 18, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-9:{"N": 446, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 456, "val": 70.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-3:{"N": 783, "HIT": {"n": 673, "val": -186.0}, "STAY": {"n": 55, "val": -1.0}, "DOUBLE": {"n": 85, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-20-10:{"N": 4250, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 4260, "val": 2396.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-9:{"N": 810, "HIT": {"n": 793, "val": -317.0}, "STAY": {"n": 31, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-3:{"N": 561, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 571, "val": 214.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-3:{"N": 169, "HIT": {"n": 90, "val": -2.0}, "STAY": {"n": 13, "val": 7.0}, "DOUBLE": {"n": 96, "val": 10.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-10:{"N": 904, "HIT": {"n": 883, "val": -305.0}, "STAY": {"n": 33, "val": -1.0}, "DOUBLE": {"n": 18, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-3:{"N": 411, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 421, "val": 278.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-3:{"N": 120, "HIT": {"n": 85, "val": 0.0}, "STAY": {"n": 35, "val": -1.0}, "DOUBLE": {"n": 30, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-4:{"N": 135, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 145, "val": 82.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-2:{"N": 630, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 640, "val": 256.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-5:{"N": 751, "HIT": {"n": 360, "val": -126.0}, "STAY": {"n": 375, "val": -13.0}, "DOUBLE": {"n": 46, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-10:{"N": 3468, "HIT": {"n": 3448, "val": -1937.0}, "STAY": {"n": 29, "val": -1.0}, "DOUBLE": {"n": 21, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-9:{"N": 108, "HIT": {"n": 78, "val": 1.0}, "STAY": {"n": 11, "val": 9.0}, "DOUBLE": {"n": 49, "val": 10.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-9:{"N": 134, "HIT": {"n": 93, "val": -29.0}, "STAY": {"n": 49, "val": -1.0}, "DOUBLE": {"n": 22, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-9:{"N": 389, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 399, "val": 70.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-4:{"N": 761, "HIT": {"n": 375, "val": -131.0}, "STAY": {"n": 371, "val": -69.0}, "DOUBLE": {"n": 45, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-10:{"N": 2949, "HIT": {"n": 2936, "val": -1153.0}, "STAY": {"n": 27, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-5:{"N": 676, "HIT": {"n": 343, "val": -113.0}, "STAY": {"n": 341, "val": -75.0}, "DOUBLE": {"n": 22, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-4:{"N": 833, "HIT": {"n": 344, "val": -51.0}, "STAY": {"n": 426, "val": -72.0}, "DOUBLE": {"n": 93, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-10:{"N": 1589, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1599, "val": 1525.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-5:{"N": 258, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 268, "val": 40.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-8:{"N": 109, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 119, "val": 83.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-10:{"N": 365, "HIT": {"n": 324, "val": -90.0}, "STAY": {"n": 31, "val": -1.0}, "DOUBLE": {"n": 40, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-9:{"N": 751, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 761, "val": 192.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-9:{"N": 862, "HIT": {"n": 830, "val": -407.0}, "STAY": {"n": 35, "val": -1.0}, "DOUBLE": {"n": 27, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-9:{"N": 112, "HIT": {"n": 66, "val": -4.0}, "STAY": {"n": 31, "val": 5.0}, "DOUBLE": {"n": 45, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-2:{"N": 759, "HIT": {"n": 367, "val": -172.0}, "STAY": {"n": 404, "val": -120.0}, "DOUBLE": {"n": 18, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-5:{"N": 686, "HIT": {"n": 330, "val": -88.0}, "STAY": {"n": 349, "val": -15.0}, "DOUBLE": {"n": 37, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-6:{"N": 649, "HIT": {"n": 323, "val": -146.0}, "STAY": {"n": 324, "val": -16.0}, "DOUBLE": {"n": 32, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-10:{"N": 3302, "HIT": {"n": 3288, "val": -1528.0}, "STAY": {"n": 21, "val": -1.0}, "DOUBLE": {"n": 23, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-10:{"N": 440, "HIT": {"n": 417, "val": -80.0}, "STAY": {"n": 37, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-9:{"N": 161, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 171, "val": 43.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-8:{"N": 788, "HIT": {"n": 761, "val": -357.0}, "STAY": {"n": 35, "val": -1.0}, "DOUBLE": {"n": 22, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-8:{"N": 192, "HIT": {"n": 144, "val": -37.0}, "STAY": {"n": 51, "val": -1.0}, "DOUBLE": {"n": 27, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-8:{"N": 144, "HIT": {"n": 99, "val": -23.0}, "STAY": {"n": 57, "val": -1.0}, "DOUBLE": {"n": 18, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-4:{"N": 674, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 684, "val": 152.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-10:{"N": 1172, "HIT": {"n": 1113, "val": -128.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 64, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-5:{"N": 345, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 355, "val": 220.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-2:{"N": 724, "HIT": {"n": 357, "val": -139.0}, "STAY": {"n": 378, "val": -108.0}, "DOUBLE": {"n": 19, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-3:{"N": 730, "HIT": {"n": 328, "val": -107.0}, "STAY": {"n": 411, "val": -79.0}, "DOUBLE": {"n": 21, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-5:{"N": 732, "HIT": {"n": 398, "val": -196.0}, "STAY": {"n": 344, "val": -14.0}, "DOUBLE": {"n": 20, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-20-9:{"N": 1111, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1121, "val": 829.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-9:{"N": 187, "HIT": {"n": 162, "val": -51.0}, "STAY": {"n": 29, "val": -1.0}, "DOUBLE": {"n": 26, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-10:{"N": 618, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 628, "val": 52.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-8:{"N": 819, "HIT": {"n": 786, "val": -325.0}, "STAY": {"n": 43, "val": -1.0}, "DOUBLE": {"n": 20, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-4:{"N": 577, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 587, "val": 245.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-6:{"N": 602, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 612, "val": 148.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-10:{"N": 493, "HIT": {"n": 424, "val": -91.0}, "STAY": {"n": 33, "val": -1.0}, "DOUBLE": {"n": 66, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-5:{"N": 485, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 495, "val": 247.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-5:{"N": 685, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 695, "val": 146.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-2:{"N": 423, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 433, "val": 218.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-2:{"N": 735, "HIT": {"n": 358, "val": -144.0}, "STAY": {"n": 385, "val": -135.0}, "DOUBLE": {"n": 22, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-5:{"N": 111, "HIT": {"n": 73, "val": 8.0}, "STAY": {"n": 40, "val": 16.0}, "DOUBLE": {"n": 28, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-9:{"N": 37, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 47, "val": 45.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-9:{"N": 136, "HIT": {"n": 96, "val": 6.0}, "STAY": {"n": 51, "val": 5.0}, "DOUBLE": {"n": 19, "val": 4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-8:{"N": 783, "HIT": {"n": 769, "val": -319.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 19, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-2:{"N": 116, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 126, "val": 48.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-9:{"N": 930, "HIT": {"n": 450, "val": -228.0}, "STAY": {"n": 494, "val": -64.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-10:{"N": 321, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 331, "val": 319.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-10:{"N": 488, "HIT": {"n": 469, "val": -108.0}, "STAY": {"n": 22, "val": -1.0}, "DOUBLE": {"n": 27, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-6:{"N": 225, "HIT": {"n": 119, "val": -1.0}, "STAY": {"n": 124, "val": 14.0}, "DOUBLE": {"n": 12, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-8:{"N": 141, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 151, "val": 131.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-10:{"N": 673, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 683, "val": 360.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-5:{"N": 391, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 401, "val": 320.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-1/11:{"N": 663, "HIT": {"n": 651, "val": -364.0}, "STAY": {"n": 23, "val": -1.0}, "DOUBLE": {"n": 19, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-5:{"N": 239, "HIT": {"n": 249, "val": 40.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-3:{"N": 718, "HIT": {"n": 388, "val": -219.0}, "STAY": {"n": 343, "val": -28.0}, "DOUBLE": {"n": 17, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-3:{"N": 737, "HIT": {"n": 356, "val": -146.0}, "STAY": {"n": 395, "val": -105.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-3:{"N": 333, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 343, "val": 146.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-2:{"N": 826, "HIT": {"n": 361, "val": -96.0}, "STAY": {"n": 450, "val": -138.0}, "DOUBLE": {"n": 45, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-1/11:{"N": 252, "HIT": {"n": 260, "val": 10.0}, "STAY": {"n": 11, "val": 9.0}, "DOUBLE": {"n": 11, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-4:{"N": 683, "HIT": {"n": 405, "val": -172.0}, "STAY": {"n": 283, "val": -19.0}, "DOUBLE": {"n": 25, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-20-4:{"N": 864, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 874, "val": 568.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-9:{"N": 330, "HIT": {"n": 302, "val": -8.0}, "STAY": {"n": 29, "val": -1.0}, "DOUBLE": {"n": 29, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-2:{"N": 330, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 340, "val": 178.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-1/11:{"N": 654, "HIT": {"n": 287, "val": -182.0}, "STAY": {"n": 372, "val": -61.0}, "DOUBLE": {"n": 25, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-10:{"N": 390, "HIT": {"n": 319, "val": -17.0}, "STAY": {"n": 49, "val": -1.0}, "DOUBLE": {"n": 52, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-6:{"N": 733, "HIT": {"n": 389, "val": -110.0}, "STAY": {"n": 348, "val": -22.0}, "DOUBLE": {"n": 26, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-3:{"N": 138, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 148, "val": 28.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-10:{"N": 127, "HIT": {"n": 112, "val": -19.0}, "STAY": {"n": 27, "val": -1.0}, "DOUBLE": {"n": 18, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-3:{"N": 106, "HIT": {"n": 103, "val": 9.0}, "STAY": {"n": 15, "val": 7.0}, "DOUBLE": {"n": 18, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-7:{"N": 908, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 918, "val": 375.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-2:{"N": 665, "HIT": {"n": 11, "val": 9.0}, "STAY": {"n": 673, "val": 44.0}, "DOUBLE": {"n": 11, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-2:{"N": 209, "HIT": {"n": 192, "val": 6.0}, "STAY": {"n": 31, "val": 3.0}, "DOUBLE": {"n": 16, "val": 2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-5:{"N": 92, "HIT": {"n": 12, "val": 9.0}, "STAY": {"n": 52, "val": 16.0}, "DOUBLE": {"n": 58, "val": 10.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-6:{"N": 636, "HIT": {"n": 381, "val": -148.0}, "STAY": {"n": 267, "val": -31.0}, "DOUBLE": {"n": 18, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-5:{"N": 100, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 110, "val": 56.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-2:{"N": 70, "HIT": {"n": 80, "val": 10.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-1/11:{"N": 587, "HIT": {"n": 569, "val": -236.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 23, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-8:{"N": 404, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 414, "val": 172.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-2:{"N": 704, "HIT": {"n": 607, "val": -175.0}, "STAY": {"n": 105, "val": -1.0}, "DOUBLE": {"n": 22, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-2:{"N": 192, "HIT": {"n": 107, "val": 1.0}, "STAY": {"n": 45, "val": 3.0}, "DOUBLE": {"n": 70, "val": 0.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-10:{"N": 1328, "HIT": {"n": 1324, "val": 41.0}, "STAY": {"n": 18, "val": 6.0}, "DOUBLE": {"n": 16, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-6:{"N": 517, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 527, "val": 203.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-9:{"N": 357, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 367, "val": 342.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-10:{"N": 813, "HIT": {"n": 789, "val": -270.0}, "STAY": {"n": 31, "val": -1.0}, "DOUBLE": {"n": 23, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-10:{"N": 134, "HIT": {"n": 89, "val": 1.0}, "STAY": {"n": 28, "val": 0.0}, "DOUBLE": {"n": 47, "val": 0.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-6:{"N": 743, "HIT": {"n": 346, "val": -54.0}, "STAY": {"n": 357, "val": -51.0}, "DOUBLE": {"n": 70, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-4:{"N": 99, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 109, "val": 40.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-6:{"N": 714, "HIT": {"n": 358, "val": -130.0}, "STAY": {"n": 358, "val": -26.0}, "DOUBLE": {"n": 28, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-3:{"N": 682, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 692, "val": 131.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-1/11:{"N": 655, "HIT": {"n": 307, "val": -192.0}, "STAY": {"n": 360, "val": -167.0}, "DOUBLE": {"n": 18, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-1/11:{"N": 58, "HIT": {"n": 42, "val": -3.0}, "STAY": {"n": 21, "val": -1.0}, "DOUBLE": {"n": 25, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-1/11:{"N": 73, "HIT": {"n": 58, "val": -12.0}, "STAY": {"n": 29, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-20-3:{"N": 951, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 961, "val": 623.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-3:{"N": 297, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 307, "val": 48.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-1/11:{"N": 568, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 578, "val": 116.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-18-8:{"N": 742, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 752, "val": 55.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-9:{"N": 906, "HIT": {"n": 420, "val": -244.0}, "STAY": {"n": 495, "val": -179.0}, "DOUBLE": {"n": 21, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-7:{"N": 855, "HIT": {"n": 823, "val": -298.0}, "STAY": {"n": 31, "val": -1.0}, "DOUBLE": {"n": 31, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-19-8:{"N": 768, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 778, "val": 444.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-4:{"N": 117, "HIT": {"n": 60, "val": 10.0}, "STAY": {"n": 16, "val": 8.0}, "DOUBLE": {"n": 71, "val": -4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-6:{"N": 112, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 122, "val": 81.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-4:{"N": 97, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 107, "val": 40.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-4:{"N": 737, "HIT": {"n": 373, "val": -163.0}, "STAY": {"n": 357, "val": -49.0}, "DOUBLE": {"n": 37, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-16-7:{"N": 854, "HIT": {"n": 835, "val": -342.0}, "STAY": {"n": 21, "val": -1.0}, "DOUBLE": {"n": 28, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-5:{"N": 90, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 100, "val": 30.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-1/11:{"N": 303, "HIT": {"n": 313, "val": 35.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-20-5:{"N": 925, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 935, "val": 609.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-6:{"N": 221, "HIT": {"n": 231, "val": 56.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-3:{"N": 220, "HIT": {"n": 146, "val": 0.0}, "STAY": {"n": 54, "val": 0.0}, "DOUBLE": {"n": 50, "val": 16.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-13-7:{"N": 819, "HIT": {"n": 797, "val": -178.0}, "STAY": {"n": 27, "val": -1.0}, "DOUBLE": {"n": 25, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-20-7:{"N": 987, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 997, "val": 703.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-3:{"N": 189, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 199, "val": 174.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-7:{"N": 397, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 407, "val": 212.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-7:{"N": 139, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 149, "val": 117.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-7:{"N": 129, "HIT": {"n": 139, "val": 22.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-6:{"N": 259, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 269, "val": 136.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-4:{"N": 682, "HIT": {"n": 309, "val": -139.0}, "STAY": {"n": 373, "val": -1.0}, "DOUBLE": {"n": 30, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-4:{"N": 174, "HIT": {"n": 127, "val": -12.0}, "STAY": {"n": 45, "val": -1.0}, "DOUBLE": {"n": 32, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-17-5:{"N": 677, "HIT": {"n": 402, "val": -203.0}, "STAY": {"n": 280, "val": -15.0}, "DOUBLE": {"n": 25, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-5:{"N": 141, "HIT": {"n": 151, "val": 33.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-4:{"N": 105, "HIT": {"n": 72, "val": -10.0}, "STAY": {"n": 33, "val": -1.0}, "DOUBLE": {"n": 30, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-7:{"N": 143, "HIT": {"n": 89, "val": 7.0}, "STAY": {"n": 72, "val": 6.0}, "DOUBLE": {"n": 12, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-10:{"N": 349, "HIT": {"n": 300, "val": -6.0}, "STAY": {"n": 31, "val": -1.0}, "DOUBLE": {"n": 48, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-5:{"N": 101, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 111, "val": 81.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-8:{"N": 295, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 305, "val": 282.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-8:{"N": 782, "HIT": {"n": 761, "val": -267.0}, "STAY": {"n": 27, "val": -1.0}, "DOUBLE": {"n": 24, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-1/11:{"N": 382, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 392, "val": 357.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-15-1/11:{"N": 646, "HIT": {"n": 627, "val": -311.0}, "STAY": {"n": 31, "val": -1.0}, "DOUBLE": {"n": 18, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-7:{"N": 334, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 344, "val": 130.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-12-8:{"N": 787, "HIT": {"n": 772, "val": -227.0}, "STAY": {"n": 29, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-6:{"N": 40, "HIT": {"n": 33, "val": 10.0}, "STAY": {"n": 26, "val": 12.0}, "DOUBLE": {"n": 11, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-8:{"N": 280, "HIT": {"n": 290, "val": 32.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-4:{"N": 96, "HIT": {"n": 81, "val": 6.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 20, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-20-2:{"N": 941, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 951, "val": 608.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-8:{"N": 118, "HIT": {"n": 91, "val": -8.0}, "STAY": {"n": 41, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-1/11:{"N": 75, "HIT": {"n": 60, "val": -12.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 20, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-7:{"N": 162, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 172, "val": 109.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-7:{"N": 274, "HIT": {"n": 284, "val": 40.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-6:{"N": 86, "HIT": {"n": 57, "val": 5.0}, "STAY": {"n": 11, "val": 9.0}, "DOUBLE": {"n": 48, "val": 26.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-3:{"N": 38, "HIT": {"n": 32, "val": 1.0}, "STAY": {"n": 21, "val": 7.0}, "DOUBLE": {"n": 15, "val": 4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-3:{"N": 133, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 143, "val": 97.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-14-4:{"N": 620, "HIT": {"n": 324, "val": -129.0}, "STAY": {"n": 308, "val": -24.0}, "DOUBLE": {"n": 18, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-1/11:{"N": 133, "HIT": {"n": 106, "val": -32.0}, "STAY": {"n": 27, "val": -1.0}, "DOUBLE": {"n": 30, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-2:{"N": 129, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 139, "val": 91.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-2:{"N": 95, "HIT": {"n": 55, "val": 0.0}, "STAY": {"n": 17, "val": 9.0}, "DOUBLE": {"n": 53, "val": 26.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-10:{"N": 559, "HIT": {"n": 480, "val": -94.0}, "STAY": {"n": 45, "val": -1.0}, "DOUBLE": {"n": 64, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-7:{"N": 311, "HIT": {"n": 321, "val": 63.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-8:{"N": 295, "HIT": {"n": 265, "val": -10.0}, "STAY": {"n": 29, "val": -1.0}, "DOUBLE": {"n": 31, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-6:{"N": 136, "HIT": {"n": 146, "val": 41.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-3:{"N": 68, "HIT": {"n": 62, "val": 3.0}, "STAY": {"n": 22, "val": 4.0}, "DOUBLE": {"n": 14, "val": 2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-8:{"N": 114, "HIT": {"n": 115, "val": 13.0}, "STAY": {"n": 13, "val": 7.0}, "DOUBLE": {"n": 16, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-6:{"N": 101, "HIT": {"n": 52, "val": 8.0}, "STAY": {"n": 15, "val": 11.0}, "DOUBLE": {"n": 64, "val": -24.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-2:{"N": 123, "HIT": {"n": 68, "val": -1.0}, "STAY": {"n": 72, "val": 10.0}, "DOUBLE": {"n": 13, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-6:{"N": 393, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 403, "val": 276.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-5:{"N": 88, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 98, "val": 56.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-4:{"N": 220, "HIT": {"n": 189, "val": 8.0}, "STAY": {"n": 29, "val": 9.0}, "DOUBLE": {"n": 32, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-3:{"N": 61, "HIT": {"n": 47, "val": 4.0}, "STAY": {"n": 31, "val": 9.0}, "DOUBLE": {"n": 13, "val": 4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-9:{"N": 121, "HIT": {"n": 106, "val": -12.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 20, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-4:{"N": 292, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 302, "val": 244.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-6:{"N": 92, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 102, "val": 32.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-5:{"N": 96, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 106, "val": 16.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-10:{"N": 474, "HIT": {"n": 459, "val": -182.0}, "STAY": {"n": 29, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-9:{"N": 256, "HIT": {"n": 245, "val": -31.0}, "STAY": {"n": 25, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8-1/11:{"N": 158, "HIT": {"n": 141, "val": -31.0}, "STAY": {"n": 23, "val": -1.0}, "DOUBLE": {"n": 24, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-2:{"N": 17, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 27, "val": 25.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-7:{"N": 31, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 41, "val": 38.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-7:{"N": 117, "HIT": {"n": 67, "val": 2.0}, "STAY": {"n": 17, "val": 9.0}, "DOUBLE": {"n": 63, "val": 20.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-4:{"N": 128, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 138, "val": 105.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-4:{"N": 44, "HIT": {"n": 54, "val": 20.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-2:{"N": 97, "HIT": {"n": 73, "val": 6.0}, "STAY": {"n": 38, "val": 0.0}, "DOUBLE": {"n": 16, "val": 0.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-5:{"N": 90, "HIT": {"n": 12, "val": 7.0}, "STAY": {"n": 25, "val": 7.0}, "DOUBLE": {"n": 83, "val": 20.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10-8:{"N": 320, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 330, "val": 100.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-7:{"N": 103, "HIT": {"n": 108, "val": 18.0}, "STAY": {"n": 11, "val": 9.0}, "DOUBLE": {"n": 14, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-2:{"N": 133, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 143, "val": 25.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-4:{"N": 93, "HIT": {"n": 66, "val": 4.0}, "STAY": {"n": 26, "val": 4.0}, "DOUBLE": {"n": 31, "val": 10.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-1/11:{"N": 27, "HIT": {"n": 24, "val": 6.0}, "STAY": {"n": 12, "val": 8.0}, "DOUBLE": {"n": 21, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-9:{"N": 33, "HIT": {"n": 34, "val": 6.0}, "STAY": {"n": 16, "val": 4.0}, "DOUBLE": {"n": 13, "val": 4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-8:{"N": 128, "HIT": {"n": 81, "val": 0.0}, "STAY": {"n": 39, "val": -1.0}, "DOUBLE": {"n": 38, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-1/11:{"N": 179, "HIT": {"n": 96, "val": -8.0}, "STAY": {"n": 27, "val": -1.0}, "DOUBLE": {"n": 86, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-2:{"N": 271, "HIT": {"n": 193, "val": 5.0}, "STAY": {"n": 91, "val": 5.0}, "DOUBLE": {"n": 17, "val": 4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-5:{"N": 133, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 143, "val": 79.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-6:{"N": 105, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 115, "val": 40.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7/17-8:{"N": 141, "HIT": {"n": 89, "val": -4.0}, "STAY": {"n": 12, "val": 8.0}, "DOUBLE": {"n": 70, "val": 20.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-7-5:{"N": 156, "HIT": {"n": 94, "val": 10.0}, "STAY": {"n": 11, "val": 9.0}, "DOUBLE": {"n": 81, "val": 22.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-9:{"N": 95, "HIT": {"n": 72, "val": -15.0}, "STAY": {"n": 31, "val": -1.0}, "DOUBLE": {"n": 22, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-4:{"N": 34, "HIT": {"n": 44, "val": 12.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-4:{"N": 116, "HIT": {"n": 11, "val": 9.0}, "STAY": {"n": 11, "val": 9.0}, "DOUBLE": {"n": 124, "val": 12.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-9:{"N": 25, "HIT": {"n": 29, "val": 10.0}, "STAY": {"n": 11, "val": 9.0}, "DOUBLE": {"n": 15, "val": 16.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-1/11:{"N": 63, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 73, "val": 19.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-1/11:{"N": 51, "HIT": {"n": 37, "val": 5.0}, "STAY": {"n": 21, "val": 5.0}, "DOUBLE": {"n": 23, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-7:{"N": 81, "HIT": {"n": 91, "val": 41.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9/19-6:{"N": 123, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 133, "val": 59.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-7:{"N": 155, "HIT": {"n": 130, "val": -3.0}, "STAY": {"n": 33, "val": -1.0}, "DOUBLE": {"n": 22, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11-4:{"N": 419, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 429, "val": 272.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-1/11:{"N": 60, "HIT": {"n": 40, "val": 0.0}, "STAY": {"n": 23, "val": -1.0}, "DOUBLE": {"n": 27, "val": 2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-9-4:{"N": 277, "HIT": {"n": 118, "val": 4.0}, "STAY": {"n": 42, "val": 4.0}, "DOUBLE": {"n": 147, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-8:{"N": 37, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 47, "val": 43.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-8:{"N": 25, "HIT": {"n": 23, "val": 6.0}, "STAY": {"n": 19, "val": 5.0}, "DOUBLE": {"n": 13, "val": 4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6-2:{"N": 113, "HIT": {"n": 100, "val": 5.0}, "STAY": {"n": 30, "val": 4.0}, "DOUBLE": {"n": 13, "val": 4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-6:{"N": 88, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 98, "val": 50.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-6:{"N": 100, "HIT": {"n": 32, "val": 3.0}, "STAY": {"n": 33, "val": 7.0}, "DOUBLE": {"n": 65, "val": 2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-3/13-6:{"N": 95, "HIT": {"n": 15, "val": 9.0}, "STAY": {"n": 19, "val": 9.0}, "DOUBLE": {"n": 91, "val": 10.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-9:{"N": 136, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 146, "val": 122.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-2:{"N": 16, "HIT": {"n": 26, "val": 14.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-8/18-1/11:{"N": 75, "HIT": {"n": 50, "val": -1.0}, "STAY": {"n": 39, "val": -1.0}, "DOUBLE": {"n": 16, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-2:{"N": 25, "HIT": {"n": 23, "val": 7.0}, "STAY": {"n": 22, "val": 10.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-4:{"N": 94, "HIT": {"n": 104, "val": 21.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-2:{"N": 105, "HIT": {"n": 66, "val": -2.0}, "STAY": {"n": 55, "val": 19.0}, "DOUBLE": {"n": 14, "val": 2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5-2:{"N": 65, "HIT": {"n": 45, "val": 8.0}, "STAY": {"n": 26, "val": 8.0}, "DOUBLE": {"n": 24, "val": 10.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-9:{"N": 102, "HIT": {"n": 112, "val": 22.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-5:{"N": 42, "HIT": {"n": 31, "val": 10.0}, "STAY": {"n": 31, "val": 17.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-10/20-1/11:{"N": 71, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 81, "val": 59.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-5/15-8:{"N": 129, "HIT": {"n": 86, "val": 0.0}, "STAY": {"n": 34, "val": 0.0}, "DOUBLE": {"n": 39, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-6:{"N": 32, "HIT": {"n": 17, "val": 12.0}, "STAY": {"n": 13, "val": 9.0}, "DOUBLE": {"n": 32, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-8:{"N": 30, "HIT": {"n": 27, "val": 9.0}, "STAY": {"n": 13, "val": 9.0}, "DOUBLE": {"n": 20, "val": 10.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4-7:{"N": 32, "HIT": {"n": 25, "val": 5.0}, "STAY": {"n": 15, "val": 5.0}, "DOUBLE": {"n": 22, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-6/16-1/11:{"N": 65, "HIT": {"n": 46, "val": -9.0}, "STAY": {"n": 35, "val": 3.0}, "DOUBLE": {"n": 14, "val": 2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-4/14-1/11:{"N": 48, "HIT": {"n": 37, "val": -1.0}, "STAY": {"n": 22, "val": 0.0}, "DOUBLE": {"n": 19, "val": 0.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-1/11:{"N": 18, "HIT": {"n": 28, "val": 11.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-1/11:{"N": 25, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 35, "val": 34.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-7:{"N": 46, "HIT": {"n": 50, "val": 15.0}, "STAY": {"n": 13, "val": 7.0}, "DOUBLE": {"n": 13, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-2:{"N": 199, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 209, "val": 187.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-2/12-5:{"N": 25, "HIT": {"n": 26, "val": 15.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 19, "val": 0.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-4:{"N": 20, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 30, "val": 28.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-4:{"N": 165, "HIT": {"n": 11, "val": 9.0}, "STAY": {"n": 174, "val": 153.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-6:{"N": 143, "HIT": {"n": 11, "val": 9.0}, "STAY": {"n": 152, "val": 136.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-21-5:{"N": 179, "HIT": {"n": 11, "val": 9.0}, "STAY": {"n": 188, "val": 165.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-5:{"N": 1, "HIT": {"n": 11, "val": 11.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
-11/21-6:{"N": 4, "HIT": {"n": 12, "val": 10.0}, "STAY": {"n": 12, "val": 12.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}
+13-4:{"N": 7537, "HIT": {"n": 2046, "val": -670.0}, "STAY": {"n": 4145, "val": -669.0}, "DOUBLE": {"n": 1376, "val": -670.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+3/13-4:{"N": 962, "HIT": {"n": 972, "val": 76.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+12-5:{"N": 7410, "HIT": {"n": 1749, "val": -496.0}, "STAY": {"n": 4123, "val": -497.0}, "DOUBLE": {"n": 1568, "val": -498.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+20-7:{"N": 9039, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 9049, "val": 6997.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9-4:{"N": 2790, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 2800, "val": 830.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+19-10:{"N": 23896, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 23906, "val": 2201.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+14-5:{"N": 6777, "HIT": {"n": 1498, "val": -563.0}, "STAY": {"n": 4405, "val": -549.0}, "DOUBLE": {"n": 904, "val": -564.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+17-3:{"N": 6302, "HIT": {"n": 1074, "val": -535.0}, "STAY": {"n": 4753, "val": -533.0}, "DOUBLE": {"n": 505, "val": -536.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+11-5:{"N": 4058, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 4068, "val": 3008.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+16-7:{"N": 7547, "HIT": {"n": 4571, "val": -1895.0}, "STAY": {"n": 1848, "val": -832.0}, "DOUBLE": {"n": 1158, "val": -834.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+6/16-7:{"N": 1315, "HIT": {"n": 1108, "val": -36.0}, "STAY": {"n": 95, "val": -37.0}, "DOUBLE": {"n": 142, "val": -28.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+15-9:{"N": 7407, "HIT": {"n": 4493, "val": -2054.0}, "STAY": {"n": 1897, "val": -1013.0}, "DOUBLE": {"n": 1047, "val": -1014.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+20-5:{"N": 7852, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 7862, "val": 5313.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+11/21-10:{"N": 2024, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 2034, "val": 1951.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+5/15-10:{"N": 4126, "HIT": {"n": 2456, "val": -398.0}, "STAY": {"n": 783, "val": -399.0}, "DOUBLE": {"n": 917, "val": -398.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+15-10:{"N": 28701, "HIT": {"n": 17919, "val": -8946.0}, "STAY": {"n": 7102, "val": -3710.0}, "DOUBLE": {"n": 3710, "val": -3710.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+12-10:{"N": 29159, "HIT": {"n": 15818, "val": -5927.0}, "STAY": {"n": 7855, "val": -4241.0}, "DOUBLE": {"n": 5516, "val": -4242.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+11-10:{"N": 15932, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 15942, "val": 2554.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+12-9:{"N": 7828, "HIT": {"n": 4184, "val": -1610.0}, "STAY": {"n": 2092, "val": -1100.0}, "DOUBLE": {"n": 1582, "val": -1102.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+19-9:{"N": 5498, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 5508, "val": 1504.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+15-8:{"N": 7552, "HIT": {"n": 4456, "val": -1834.0}, "STAY": {"n": 1968, "val": -1018.0}, "DOUBLE": {"n": 1158, "val": -1020.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+20-6:{"N": 7689, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 7699, "val": 5214.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+20-8:{"N": 9109, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 9119, "val": 7211.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+13-8:{"N": 7973, "HIT": {"n": 4266, "val": -1394.0}, "STAY": {"n": 2262, "val": -1114.0}, "DOUBLE": {"n": 1475, "val": -1118.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+14-3:{"N": 7402, "HIT": {"n": 2035, "val": -884.0}, "STAY": {"n": 4133, "val": -883.0}, "DOUBLE": {"n": 1264, "val": -884.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+12-3:{"N": 7559, "HIT": {"n": 3852, "val": -795.0}, "STAY": {"n": 2408, "val": -646.0}, "DOUBLE": {"n": 1329, "val": -648.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+14-9:{"N": 7535, "HIT": {"n": 4378, "val": -1775.0}, "STAY": {"n": 1894, "val": -1092.0}, "DOUBLE": {"n": 1293, "val": -1092.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+18-10:{"N": 25632, "HIT": {"n": 5017, "val": -3029.0}, "STAY": {"n": 18297, "val": -3028.0}, "DOUBLE": {"n": 2348, "val": -3030.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+16-1/11:{"N": 5519, "HIT": {"n": 3506, "val": -1897.0}, "STAY": {"n": 1304, "val": -756.0}, "DOUBLE": {"n": 739, "val": -756.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+18-4:{"N": 5706, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 5716, "val": 890.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8-4:{"N": 2244, "HIT": {"n": 2254, "val": 133.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+9/19-6:{"N": 1205, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1215, "val": 543.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+12-6:{"N": 7615, "HIT": {"n": 2212, "val": -463.0}, "STAY": {"n": 3961, "val": -463.0}, "DOUBLE": {"n": 1472, "val": -464.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+10/20-3:{"N": 1224, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1234, "val": 800.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4/14-3:{"N": 836, "HIT": {"n": 762, "val": 2.0}, "STAY": {"n": 23, "val": 1.0}, "DOUBLE": {"n": 81, "val": 20.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+19-2:{"N": 5887, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 5897, "val": 2254.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+20-10:{"N": 33376, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 33386, "val": 19116.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+17-2:{"N": 6760, "HIT": {"n": 1345, "val": -705.0}, "STAY": {"n": 4807, "val": -705.0}, "DOUBLE": {"n": 638, "val": -706.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+13-5:{"N": 7182, "HIT": {"n": 1719, "val": -596.0}, "STAY": {"n": 4255, "val": -587.0}, "DOUBLE": {"n": 1238, "val": -596.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+12-4:{"N": 7709, "HIT": {"n": 2394, "val": -644.0}, "STAY": {"n": 3893, "val": -731.0}, "DOUBLE": {"n": 1452, "val": -646.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+15-6:{"N": 6789, "HIT": {"n": 1192, "val": -492.0}, "STAY": {"n": 5088, "val": -492.0}, "DOUBLE": {"n": 539, "val": -492.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+17-8:{"N": 7266, "HIT": {"n": 1643, "val": -746.0}, "STAY": {"n": 4833, "val": -1804.0}, "DOUBLE": {"n": 820, "val": -748.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+16-8:{"N": 7281, "HIT": {"n": 4576, "val": -1972.0}, "STAY": {"n": 1664, "val": -844.0}, "DOUBLE": {"n": 1071, "val": -844.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+14-8:{"N": 7863, "HIT": {"n": 4401, "val": -1539.0}, "STAY": {"n": 2083, "val": -1067.0}, "DOUBLE": {"n": 1409, "val": -1070.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+17-9:{"N": 7139, "HIT": {"n": 1585, "val": -884.0}, "STAY": {"n": 4817, "val": -2026.0}, "DOUBLE": {"n": 767, "val": -886.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+9/19-10:{"N": 5279, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 5289, "val": 228.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+14-6:{"N": 6834, "HIT": {"n": 1260, "val": -516.0}, "STAY": {"n": 4759, "val": -509.0}, "DOUBLE": {"n": 845, "val": -516.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8-6:{"N": 2328, "HIT": {"n": 2338, "val": 459.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+11-7:{"N": 4283, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 4293, "val": 1964.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+11-9:{"N": 4183, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 4193, "val": 1002.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+13-1/11:{"N": 5833, "HIT": {"n": 3233, "val": -1293.0}, "STAY": {"n": 1626, "val": -864.0}, "DOUBLE": {"n": 1004, "val": -866.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9-1/11:{"N": 2013, "HIT": {"n": 1296, "val": -178.0}, "STAY": {"n": 327, "val": -181.0}, "DOUBLE": {"n": 420, "val": -182.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+16-10:{"N": 27403, "HIT": {"n": 17824, "val": -9446.0}, "STAY": {"n": 6256, "val": -3350.0}, "DOUBLE": {"n": 3353, "val": -3354.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10-7:{"N": 3500, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3510, "val": 1614.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+16-4:{"N": 6417, "HIT": {"n": 1620, "val": -764.0}, "STAY": {"n": 4004, "val": -764.0}, "DOUBLE": {"n": 823, "val": -764.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+21-10:{"N": 7608, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 7618, "val": 7322.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+21-7:{"N": 1725, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1735, "val": 1618.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+16-5:{"N": 6573, "HIT": {"n": 1383, "val": -635.0}, "STAY": {"n": 4566, "val": -634.0}, "DOUBLE": {"n": 654, "val": -636.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+14-10:{"N": 28415, "HIT": {"n": 16757, "val": -7837.0}, "STAY": {"n": 7542, "val": -3934.0}, "DOUBLE": {"n": 4146, "val": -3936.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10-3:{"N": 3237, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3247, "val": 1636.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+8-3:{"N": 2175, "HIT": {"n": 2136, "val": 16.0}, "STAY": {"n": 43, "val": 7.0}, "DOUBLE": {"n": 26, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+17-10:{"N": 27333, "HIT": {"n": 5652, "val": -3391.0}, "STAY": {"n": 18516, "val": -7678.0}, "DOUBLE": {"n": 3195, "val": -3388.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+15-3:{"N": 7080, "HIT": {"n": 1974, "val": -920.0}, "STAY": {"n": 4040, "val": -920.0}, "DOUBLE": {"n": 1096, "val": -916.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+13-10:{"N": 29736, "HIT": {"n": 16921, "val": -7094.0}, "STAY": {"n": 7958, "val": -4234.0}, "DOUBLE": {"n": 4887, "val": -4236.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+17-1/11:{"N": 5406, "HIT": {"n": 1248, "val": -728.0}, "STAY": {"n": 3512, "val": -1690.0}, "DOUBLE": {"n": 676, "val": -726.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+19-7:{"N": 6618, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 6628, "val": 4072.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9-7:{"N": 2980, "HIT": {"n": 2990, "val": 578.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+16-2:{"N": 6891, "HIT": {"n": 2207, "val": -1038.0}, "STAY": {"n": 3675, "val": -1037.0}, "DOUBLE": {"n": 1039, "val": -1038.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10-10:{"N": 12942, "HIT": {"n": 8756, "val": -32.0}, "STAY": {"n": 83, "val": -33.0}, "DOUBLE": {"n": 4133, "val": 134.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+19-3:{"N": 4864, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 4874, "val": 1825.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+18-1/11:{"N": 5343, "HIT": {"n": 1136, "val": -726.0}, "STAY": {"n": 3652, "val": -721.0}, "DOUBLE": {"n": 585, "val": -726.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+11-1/11:{"N": 2955, "HIT": {"n": 2965, "val": 246.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+19-5:{"N": 4549, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 4559, "val": 2068.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+15-7:{"N": 7803, "HIT": {"n": 4582, "val": -1634.0}, "STAY": {"n": 1908, "val": -914.0}, "DOUBLE": {"n": 1343, "val": -914.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+13-7:{"N": 8165, "HIT": {"n": 4234, "val": -1187.0}, "STAY": {"n": 2262, "val": -1068.0}, "DOUBLE": {"n": 1699, "val": -1066.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+20-9:{"N": 9308, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 9318, "val": 6956.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+12-8:{"N": 8036, "HIT": {"n": 4103, "val": -1273.0}, "STAY": {"n": 2294, "val": -1198.0}, "DOUBLE": {"n": 1669, "val": -1198.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+4/14-6:{"N": 1009, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1019, "val": 286.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+14-1/11:{"N": 5619, "HIT": {"n": 3254, "val": -1536.0}, "STAY": {"n": 1532, "val": -864.0}, "DOUBLE": {"n": 863, "val": -866.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+6/16-10:{"N": 4413, "HIT": {"n": 2454, "val": -640.0}, "STAY": {"n": 1030, "val": -506.0}, "DOUBLE": {"n": 959, "val": -508.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+16-6:{"N": 5498, "HIT": {"n": 1172, "val": -483.0}, "STAY": {"n": 3772, "val": -480.0}, "DOUBLE": {"n": 584, "val": -484.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8/18-5:{"N": 1078, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1088, "val": 310.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+9-10:{"N": 11400, "HIT": {"n": 7127, "val": -1051.0}, "STAY": {"n": 1995, "val": -1061.0}, "DOUBLE": {"n": 2308, "val": -1062.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+18-9:{"N": 6752, "HIT": {"n": 1430, "val": -908.0}, "STAY": {"n": 4608, "val": -907.0}, "DOUBLE": {"n": 744, "val": -908.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+13-9:{"N": 7864, "HIT": {"n": 4377, "val": -1667.0}, "STAY": {"n": 2082, "val": -1144.0}, "DOUBLE": {"n": 1435, "val": -1146.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10/20-2:{"N": 1512, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1522, "val": 991.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9-2:{"N": 2719, "HIT": {"n": 2729, "val": 172.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+10-1/11:{"N": 2361, "HIT": {"n": 2346, "val": 44.0}, "STAY": {"n": 26, "val": 2.0}, "DOUBLE": {"n": 19, "val": 2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+18-7:{"N": 7211, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 7221, "val": 2856.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+11-2:{"N": 4083, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 4093, "val": 2130.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+12-7:{"N": 8105, "HIT": {"n": 4209, "val": -976.0}, "STAY": {"n": 2152, "val": -976.0}, "DOUBLE": {"n": 1774, "val": -972.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+17-4:{"N": 6200, "HIT": {"n": 744, "val": -411.0}, "STAY": {"n": 5090, "val": -407.0}, "DOUBLE": {"n": 396, "val": -412.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+13-2:{"N": 7931, "HIT": {"n": 2209, "val": -878.0}, "STAY": {"n": 4358, "val": -1136.0}, "DOUBLE": {"n": 1394, "val": -880.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+18-5:{"N": 5550, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 5560, "val": 1154.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+19-8:{"N": 6752, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 6762, "val": 3969.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+7-10:{"N": 7232, "HIT": {"n": 3809, "val": -1177.0}, "STAY": {"n": 2219, "val": -1177.0}, "DOUBLE": {"n": 1234, "val": -1178.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+5-10:{"N": 3529, "HIT": {"n": 1840, "val": -600.0}, "STAY": {"n": 1096, "val": -600.0}, "DOUBLE": {"n": 623, "val": -600.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+18-3:{"N": 5808, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 5818, "val": 740.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8/18-10:{"N": 4975, "HIT": {"n": 2969, "val": -443.0}, "STAY": {"n": 1286, "val": -234.0}, "DOUBLE": {"n": 750, "val": -236.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9/19-2:{"N": 1326, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1336, "val": 488.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+2/12-6:{"N": 390, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 400, "val": 144.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+18-2:{"N": 6024, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 6034, "val": 761.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8-2:{"N": 2223, "HIT": {"n": 1518, "val": -70.0}, "STAY": {"n": 259, "val": -71.0}, "DOUBLE": {"n": 476, "val": -70.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+6-2:{"N": 1089, "HIT": {"n": 601, "val": -82.0}, "STAY": {"n": 348, "val": -82.0}, "DOUBLE": {"n": 170, "val": -76.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+8-9:{"N": 2321, "HIT": {"n": 1377, "val": -303.0}, "STAY": {"n": 578, "val": -302.0}, "DOUBLE": {"n": 396, "val": -302.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+4-3:{"N": 345, "HIT": {"n": 279, "val": -8.0}, "STAY": {"n": 66, "val": -8.0}, "DOUBLE": {"n": 30, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+7/17-10:{"N": 4572, "HIT": {"n": 2609, "val": -451.0}, "STAY": {"n": 928, "val": -435.0}, "DOUBLE": {"n": 1065, "val": -436.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9-8:{"N": 3078, "HIT": {"n": 3088, "val": 102.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+7/17-3:{"N": 1264, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1274, "val": 38.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+11-3:{"N": 4028, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 4038, "val": 2414.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+7-9:{"N": 2018, "HIT": {"n": 1059, "val": -309.0}, "STAY": {"n": 637, "val": -309.0}, "DOUBLE": {"n": 352, "val": -310.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+17-7:{"N": 6759, "HIT": {"n": 1210, "val": -561.0}, "STAY": {"n": 4902, "val": -558.0}, "DOUBLE": {"n": 677, "val": -562.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+11-4:{"N": 4108, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 4118, "val": 2714.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+13-3:{"N": 7006, "HIT": {"n": 2000, "val": -751.0}, "STAY": {"n": 3798, "val": -964.0}, "DOUBLE": {"n": 1238, "val": -752.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+11-6:{"N": 4215, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 4225, "val": 3070.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+16-9:{"N": 7067, "HIT": {"n": 4534, "val": -2152.0}, "STAY": {"n": 1545, "val": -825.0}, "DOUBLE": {"n": 1018, "val": -826.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+6/16-8:{"N": 1264, "HIT": {"n": 717, "val": -106.0}, "STAY": {"n": 237, "val": -107.0}, "DOUBLE": {"n": 340, "val": -100.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+3/13-6:{"N": 920, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 930, "val": 156.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+7-8:{"N": 1999, "HIT": {"n": 1073, "val": -312.0}, "STAY": {"n": 569, "val": -313.0}, "DOUBLE": {"n": 387, "val": -314.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+5-8:{"N": 971, "HIT": {"n": 542, "val": -119.0}, "STAY": {"n": 326, "val": -120.0}, "DOUBLE": {"n": 133, "val": -120.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+8-8:{"N": 2472, "HIT": {"n": 1881, "val": -160.0}, "STAY": {"n": 329, "val": -161.0}, "DOUBLE": {"n": 292, "val": -162.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+10-2:{"N": 3362, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3372, "val": 1450.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+9-5:{"N": 3012, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3022, "val": 1134.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+21-9:{"N": 1925, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1935, "val": 1838.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+16-3:{"N": 6618, "HIT": {"n": 1807, "val": -928.0}, "STAY": {"n": 3903, "val": -925.0}, "DOUBLE": {"n": 938, "val": -928.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+15-4:{"N": 6848, "HIT": {"n": 1629, "val": -760.0}, "STAY": {"n": 4251, "val": -759.0}, "DOUBLE": {"n": 998, "val": -760.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10/20-10:{"N": 5611, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 5621, "val": 3208.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4/14-5:{"N": 1010, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1020, "val": 196.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+5-9:{"N": 959, "HIT": {"n": 571, "val": -124.0}, "STAY": {"n": 270, "val": -124.0}, "DOUBLE": {"n": 148, "val": -126.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+5/15-3:{"N": 1126, "HIT": {"n": 760, "val": 10.0}, "STAY": {"n": 97, "val": -15.0}, "DOUBLE": {"n": 299, "val": -16.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+18-8:{"N": 6038, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 6048, "val": 530.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+3/13-8:{"N": 986, "HIT": {"n": 903, "val": -20.0}, "STAY": {"n": 65, "val": -23.0}, "DOUBLE": {"n": 48, "val": -24.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+20-4:{"N": 8211, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 8221, "val": 5183.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10/20-7:{"N": 1685, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1695, "val": 1344.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4/14-7:{"N": 1088, "HIT": {"n": 1075, "val": 13.0}, "STAY": {"n": 11, "val": 9.0}, "DOUBLE": {"n": 32, "val": 8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+8-5:{"N": 2164, "HIT": {"n": 2174, "val": 329.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+19-6:{"N": 4637, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 4647, "val": 1959.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9/19-3:{"N": 1447, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1457, "val": 659.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9-6:{"N": 3036, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3046, "val": 1134.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+9/19-5:{"N": 1172, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1182, "val": 530.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10/20-5:{"N": 943, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 953, "val": 660.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+12-2:{"N": 7090, "HIT": {"n": 3731, "val": -936.0}, "STAY": {"n": 1903, "val": -483.0}, "DOUBLE": {"n": 1486, "val": -486.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10/20-9:{"N": 1282, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1292, "val": 997.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+7/17-9:{"N": 1237, "HIT": {"n": 745, "val": -110.0}, "STAY": {"n": 248, "val": -111.0}, "DOUBLE": {"n": 274, "val": -112.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+11-8:{"N": 4072, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 4082, "val": 1412.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+8/18-7:{"N": 1294, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1304, "val": 525.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+7/17-7:{"N": 1371, "HIT": {"n": 815, "val": -10.0}, "STAY": {"n": 252, "val": -10.0}, "DOUBLE": {"n": 334, "val": 48.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+14-7:{"N": 7908, "HIT": {"n": 4447, "val": -1540.0}, "STAY": {"n": 2041, "val": -967.0}, "DOUBLE": {"n": 1450, "val": -968.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10/20-1/11:{"N": 721, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 731, "val": 438.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+7-3:{"N": 1786, "HIT": {"n": 1172, "val": -54.0}, "STAY": {"n": 379, "val": -59.0}, "DOUBLE": {"n": 265, "val": -60.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+15-5:{"N": 5930, "HIT": {"n": 1178, "val": -546.0}, "STAY": {"n": 4115, "val": -545.0}, "DOUBLE": {"n": 667, "val": -546.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+11/21-2:{"N": 232, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 242, "val": 216.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+2/12-2:{"N": 359, "HIT": {"n": 369, "val": 56.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+12-1/11:{"N": 5691, "HIT": {"n": 3034, "val": -1140.0}, "STAY": {"n": 1590, "val": -910.0}, "DOUBLE": {"n": 1097, "val": -908.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+8-10:{"N": 8763, "HIT": {"n": 4721, "val": -1318.0}, "STAY": {"n": 2411, "val": -1323.0}, "DOUBLE": {"n": 1661, "val": -1324.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+3/13-3:{"N": 1063, "HIT": {"n": 868, "val": -8.0}, "STAY": {"n": 77, "val": -9.0}, "DOUBLE": {"n": 148, "val": -6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+7-7:{"N": 1995, "HIT": {"n": 1372, "val": -170.0}, "STAY": {"n": 375, "val": -173.0}, "DOUBLE": {"n": 278, "val": -174.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+6-5:{"N": 1402, "HIT": {"n": 1185, "val": -1.0}, "STAY": {"n": 225, "val": -5.0}, "DOUBLE": {"n": 22, "val": -6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+9-3:{"N": 2833, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 2843, "val": 532.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+20-3:{"N": 8331, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 8341, "val": 5326.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+6-10:{"N": 4879, "HIT": {"n": 2420, "val": -907.0}, "STAY": {"n": 1627, "val": -907.0}, "DOUBLE": {"n": 862, "val": -908.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+21-8:{"N": 1777, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1787, "val": 1664.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8/18-9:{"N": 1366, "HIT": {"n": 814, "val": -101.0}, "STAY": {"n": 298, "val": -60.0}, "DOUBLE": {"n": 284, "val": -62.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+2/12-9:{"N": 357, "HIT": {"n": 236, "val": -14.0}, "STAY": {"n": 70, "val": -14.0}, "DOUBLE": {"n": 81, "val": -2.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+6-8:{"N": 1285, "HIT": {"n": 691, "val": -206.0}, "STAY": {"n": 382, "val": -206.0}, "DOUBLE": {"n": 242, "val": -202.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+6-3:{"N": 1214, "HIT": {"n": 655, "val": -63.0}, "STAY": {"n": 388, "val": -62.0}, "DOUBLE": {"n": 201, "val": -58.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+7/17-5:{"N": 1085, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1095, "val": 344.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+5/15-5:{"N": 990, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1000, "val": 62.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+10-4:{"N": 3376, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3386, "val": 1824.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+7-4:{"N": 1766, "HIT": {"n": 1246, "val": -24.0}, "STAY": {"n": 211, "val": -25.0}, "DOUBLE": {"n": 339, "val": -24.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+20-1/11:{"N": 7644, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 7654, "val": 4569.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8/18-8:{"N": 1392, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1402, "val": 212.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4/14-10:{"N": 3902, "HIT": {"n": 2508, "val": -328.0}, "STAY": {"n": 584, "val": -326.0}, "DOUBLE": {"n": 840, "val": -328.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+15-1/11:{"N": 5688, "HIT": {"n": 3391, "val": -1788.0}, "STAY": {"n": 1450, "val": -852.0}, "DOUBLE": {"n": 877, "val": -854.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+19-4:{"N": 4743, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 4753, "val": 1975.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+5-3:{"N": 741, "HIT": {"n": 461, "val": -31.0}, "STAY": {"n": 219, "val": -35.0}, "DOUBLE": {"n": 91, "val": -36.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+9-9:{"N": 3097, "HIT": {"n": 1731, "val": -157.0}, "STAY": {"n": 387, "val": -155.0}, "DOUBLE": {"n": 1009, "val": -156.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+5/15-4:{"N": 923, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 933, "val": 80.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+18-6:{"N": 5546, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 5556, "val": 1237.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+6/16-2:{"N": 1108, "HIT": {"n": 617, "val": -24.0}, "STAY": {"n": 157, "val": -25.0}, "DOUBLE": {"n": 364, "val": -4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+10/20-8:{"N": 1500, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1510, "val": 1184.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4/14-8:{"N": 1063, "HIT": {"n": 966, "val": -16.0}, "STAY": {"n": 51, "val": -21.0}, "DOUBLE": {"n": 76, "val": -22.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+17-5:{"N": 6069, "HIT": {"n": 412, "val": -172.0}, "STAY": {"n": 5485, "val": -160.0}, "DOUBLE": {"n": 202, "val": -172.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+15-2:{"N": 7392, "HIT": {"n": 2270, "val": -1063.0}, "STAY": {"n": 3875, "val": -1091.0}, "DOUBLE": {"n": 1277, "val": -1066.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+10-5:{"N": 3558, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3568, "val": 2404.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+9/19-7:{"N": 1659, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1669, "val": 1035.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+2/12-7:{"N": 385, "HIT": {"n": 395, "val": 27.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+17-6:{"N": 6319, "HIT": {"n": 256, "val": -118.0}, "STAY": {"n": 5991, "val": -98.0}, "DOUBLE": {"n": 102, "val": -118.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+14-2:{"N": 7468, "HIT": {"n": 2156, "val": -952.0}, "STAY": {"n": 3988, "val": -1046.0}, "DOUBLE": {"n": 1354, "val": -960.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+8/18-1/11:{"N": 655, "HIT": {"n": 383, "val": -35.0}, "STAY": {"n": 228, "val": -22.0}, "DOUBLE": {"n": 74, "val": -28.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4/14-1/11:{"N": 532, "HIT": {"n": 353, "val": -30.0}, "STAY": {"n": 99, "val": -29.0}, "DOUBLE": {"n": 110, "val": -30.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+7-5:{"N": 1768, "HIT": {"n": 1778, "val": 165.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+20-2:{"N": 8409, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 8419, "val": 5284.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8/18-6:{"N": 1171, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1181, "val": 396.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+6/16-4:{"N": 1214, "HIT": {"n": 121, "val": -20.0}, "STAY": {"n": 243, "val": -11.0}, "DOUBLE": {"n": 880, "val": -20.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+7/17-6:{"N": 826, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 836, "val": 224.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+19-1/11:{"N": 5026, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 5036, "val": 1104.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8-7:{"N": 2541, "HIT": {"n": 2551, "val": 136.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+5/15-1/11:{"N": 562, "HIT": {"n": 374, "val": -50.0}, "STAY": {"n": 112, "val": -50.0}, "DOUBLE": {"n": 106, "val": -52.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+6-7:{"N": 1334, "HIT": {"n": 822, "val": -157.0}, "STAY": {"n": 368, "val": -158.0}, "DOUBLE": {"n": 174, "val": -158.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+13-6:{"N": 7218, "HIT": {"n": 1553, "val": -546.0}, "STAY": {"n": 4603, "val": -529.0}, "DOUBLE": {"n": 1092, "val": -546.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+14-4:{"N": 6366, "HIT": {"n": 1606, "val": -649.0}, "STAY": {"n": 3869, "val": -645.0}, "DOUBLE": {"n": 921, "val": -650.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4/14-2:{"N": 981, "HIT": {"n": 522, "val": 7.0}, "STAY": {"n": 24, "val": 8.0}, "DOUBLE": {"n": 465, "val": 6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+5/15-6:{"N": 1008, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1018, "val": 150.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+6-6:{"N": 1370, "HIT": {"n": 1380, "val": 110.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+3/13-5:{"N": 933, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 943, "val": 238.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+9/19-4:{"N": 1344, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1354, "val": 594.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+3/13-10:{"N": 3747, "HIT": {"n": 2516, "val": -284.0}, "STAY": {"n": 591, "val": -285.0}, "DOUBLE": {"n": 670, "val": -276.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+8/18-2:{"N": 1314, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1324, "val": 231.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8-1/11:{"N": 1662, "HIT": {"n": 946, "val": -253.0}, "STAY": {"n": 489, "val": -257.0}, "DOUBLE": {"n": 257, "val": -258.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+3/13-1/11:{"N": 511, "HIT": {"n": 319, "val": -37.0}, "STAY": {"n": 96, "val": -36.0}, "DOUBLE": {"n": 126, "val": -36.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4-10:{"N": 1317, "HIT": {"n": 686, "val": -195.0}, "STAY": {"n": 389, "val": -197.0}, "DOUBLE": {"n": 272, "val": -198.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+8/18-4:{"N": 1256, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1266, "val": 482.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+4-6:{"N": 338, "HIT": {"n": 348, "val": 25.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+5/15-2:{"N": 1059, "HIT": {"n": 747, "val": -28.0}, "STAY": {"n": 142, "val": -28.0}, "DOUBLE": {"n": 200, "val": -8.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+21-1/11:{"N": 2408, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 2418, "val": 2192.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+6/16-3:{"N": 1177, "HIT": {"n": 712, "val": -16.0}, "STAY": {"n": 112, "val": -16.0}, "DOUBLE": {"n": 383, "val": 18.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+10-9:{"N": 3643, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3653, "val": 590.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+11/21-3:{"N": 277, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 287, "val": 246.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10-8:{"N": 3306, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3316, "val": 856.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+21-2:{"N": 1142, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1152, "val": 1018.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+8/18-3:{"N": 1353, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1363, "val": 212.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+6/16-6:{"N": 1075, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1085, "val": 238.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+5-2:{"N": 718, "HIT": {"n": 398, "val": -41.0}, "STAY": {"n": 156, "val": -40.0}, "DOUBLE": {"n": 194, "val": -42.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9/19-9:{"N": 1489, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1499, "val": 437.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4/14-9:{"N": 1006, "HIT": {"n": 748, "val": -64.0}, "STAY": {"n": 148, "val": -66.0}, "DOUBLE": {"n": 140, "val": -66.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+7-1/11:{"N": 1328, "HIT": {"n": 685, "val": -268.0}, "STAY": {"n": 417, "val": -215.0}, "DOUBLE": {"n": 256, "val": -218.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+6-4:{"N": 1067, "HIT": {"n": 605, "val": -20.0}, "STAY": {"n": 219, "val": -21.0}, "DOUBLE": {"n": 273, "val": -14.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+9/19-8:{"N": 1232, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1242, "val": 774.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+7-2:{"N": 1735, "HIT": {"n": 1132, "val": -91.0}, "STAY": {"n": 339, "val": -91.0}, "DOUBLE": {"n": 294, "val": -92.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+2/12-5:{"N": 379, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 389, "val": 78.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+7/17-2:{"N": 1239, "HIT": {"n": 764, "val": 8.0}, "STAY": {"n": 14, "val": 8.0}, "DOUBLE": {"n": 491, "val": 82.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+7/17-4:{"N": 1178, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 1188, "val": 200.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+5-5:{"N": 956, "HIT": {"n": 966, "val": 144.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+6-1/11:{"N": 939, "HIT": {"n": 485, "val": -163.0}, "STAY": {"n": 313, "val": -163.0}, "DOUBLE": {"n": 171, "val": -164.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+6-9:{"N": 1335, "HIT": {"n": 779, "val": -198.0}, "STAY": {"n": 376, "val": -198.0}, "DOUBLE": {"n": 210, "val": -196.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+4-8:{"N": 364, "HIT": {"n": 268, "val": -34.0}, "STAY": {"n": 74, "val": -34.0}, "DOUBLE": {"n": 52, "val": -34.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+6/16-5:{"N": 798, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 808, "val": 134.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+6/16-9:{"N": 1188, "HIT": {"n": 668, "val": -94.0}, "STAY": {"n": 175, "val": -95.0}, "DOUBLE": {"n": 375, "val": -96.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+5/15-7:{"N": 1218, "HIT": {"n": 1196, "val": 12.0}, "STAY": {"n": 29, "val": -3.0}, "DOUBLE": {"n": 23, "val": -4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+3/13-7:{"N": 1023, "HIT": {"n": 1033, "val": 22.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+2/12-1/11:{"N": 111, "HIT": {"n": 66, "val": -7.0}, "STAY": {"n": 50, "val": -6.0}, "DOUBLE": {"n": 25, "val": -6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+7-6:{"N": 2026, "HIT": {"n": 2036, "val": 126.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+10-6:{"N": 3560, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 3570, "val": 2558.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+4-2:{"N": 187, "HIT": {"n": 97, "val": -20.0}, "STAY": {"n": 72, "val": -14.0}, "DOUBLE": {"n": 48, "val": -18.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+21-3:{"N": 1030, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1040, "val": 929.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+11/21-9:{"N": 352, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 362, "val": 342.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+10/20-4:{"N": 1196, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1206, "val": 782.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+7/17-8:{"N": 1330, "HIT": {"n": 798, "val": -82.0}, "STAY": {"n": 249, "val": -83.0}, "DOUBLE": {"n": 313, "val": -68.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+3/13-2:{"N": 746, "HIT": {"n": 411, "val": -4.0}, "STAY": {"n": 57, "val": -5.0}, "DOUBLE": {"n": 308, "val": 0.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+5/15-8:{"N": 1098, "HIT": {"n": 771, "val": -45.0}, "STAY": {"n": 131, "val": -55.0}, "DOUBLE": {"n": 226, "val": -56.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+5-6:{"N": 978, "HIT": {"n": 988, "val": 121.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+10/20-6:{"N": 1010, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 1020, "val": 734.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+5-7:{"N": 946, "HIT": {"n": 700, "val": -72.0}, "STAY": {"n": 198, "val": -74.0}, "DOUBLE": {"n": 78, "val": -74.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+4-5:{"N": 351, "HIT": {"n": 180, "val": -19.0}, "STAY": {"n": 125, "val": -5.0}, "DOUBLE": {"n": 76, "val": -6.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+2/12-3:{"N": 348, "HIT": {"n": 358, "val": 47.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+6/16-1/11:{"N": 549, "HIT": {"n": 320, "val": -74.0}, "STAY": {"n": 119, "val": -55.0}, "DOUBLE": {"n": 140, "val": -54.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+11/21-1/11:{"N": 304, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 314, "val": 292.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+2/12-10:{"N": 1503, "HIT": {"n": 980, "val": -129.0}, "STAY": {"n": 260, "val": -128.0}, "DOUBLE": {"n": 293, "val": -130.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+5/15-9:{"N": 1127, "HIT": {"n": 740, "val": -82.0}, "STAY": {"n": 158, "val": -80.0}, "DOUBLE": {"n": 259, "val": -82.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+11/21-8:{"N": 321, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 331, "val": 311.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+9/19-1/11:{"N": 686, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 696, "val": 133.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+2/12-4:{"N": 367, "HIT": {"n": 377, "val": 38.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+11/21-4:{"N": 198, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 208, "val": 186.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+4/14-4:{"N": 1068, "HIT": {"n": 1078, "val": 124.0}, "STAY": {"n": 10, "val": 10}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+7/17-1/11:{"N": 614, "HIT": {"n": 336, "val": -54.0}, "STAY": {"n": 144, "val": -53.0}, "DOUBLE": {"n": 164, "val": -52.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+4-9:{"N": 363, "HIT": {"n": 229, "val": -36.0}, "STAY": {"n": 102, "val": -36.0}, "DOUBLE": {"n": 62, "val": -38.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+3/13-9:{"N": 1010, "HIT": {"n": 850, "val": -22.0}, "STAY": {"n": 57, "val": -23.0}, "DOUBLE": {"n": 133, "val": -24.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+4-7:{"N": 385, "HIT": {"n": 291, "val": -18.0}, "STAY": {"n": 75, "val": -27.0}, "DOUBLE": {"n": 49, "val": -28.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+5-1/11:{"N": 668, "HIT": {"n": 363, "val": -116.0}, "STAY": {"n": 214, "val": -116.0}, "DOUBLE": {"n": 121, "val": -116.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: DOUBLE
+5-4:{"N": 992, "HIT": {"n": 600, "val": -42.0}, "STAY": {"n": 243, "val": -43.0}, "DOUBLE": {"n": 179, "val": -44.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+4-4:{"N": 354, "HIT": {"n": 198, "val": -5.0}, "STAY": {"n": 87, "val": -11.0}, "DOUBLE": {"n": 99, "val": -12.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+4-1/11:{"N": 242, "HIT": {"n": 159, "val": -28.0}, "STAY": {"n": 61, "val": -27.0}, "DOUBLE": {"n": 52, "val": -30.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+2/12-8:{"N": 361, "HIT": {"n": 327, "val": 3.0}, "STAY": {"n": 30, "val": -4.0}, "DOUBLE": {"n": 34, "val": -4.0}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: HIT
+11/21-7:{"N": 405, "HIT": {"n": 10, "val": 10}, "STAY": {"n": 415, "val": 387.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+21-6:{"N": 551, "HIT": {"n": 11, "val": 9.0}, "STAY": {"n": 560, "val": 501.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+21-5:{"N": 583, "HIT": {"n": 11, "val": 9.0}, "STAY": {"n": 592, "val": 516.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY
+21-4:{"N": 794, "HIT": {"n": 11, "val": 9.0}, "STAY": {"n": 803, "val": 732.0}, "DOUBLE": {"n": 10, "val": 10}, "EQUAL": {"n": 0, "val": 0}, "CHANGE": {"n": 0, "val": 0}}, play: STAY

@@ -14,7 +14,7 @@ import datetime
 
 hardHandDict = {
   #エースはindex9として扱い、以降,2,3,4,.. -> 0,1,2,...として扱う
-  #HIT -> 1, DOUBLE -> 2, STAY -> 0
+  #STAY -> 0, HIT -> 1, DOUBLE -> 2, CHANGE -> 3, EQUAL -> 4
   '2': [1,1,1,1,1,1,1,1,1,1],
   '3': [1,1,1,1,1,1,1,1,1,1],
   '4': [1,1,1,1,1,1,1,1,1,1],
@@ -40,7 +40,7 @@ hardHandDict = {
 
 softHandDict = {
   #エースはindex9として扱い、以降,2,3,4,.. -> 0,1,2,...として扱う
-  #HIT -> 1, DOUBLE -> 2, STAY -> 0
+  #STAY -> 0, HIT -> 1, DOUBLE -> 2, CHANGE -> 3, EQUAL -> 4
   '12': [1,1,1,2,2,1,1,1,1,1],
   '13': [1,1,1,2,2,1,1,1,1,1],
   '14': [1,1,1,2,2,1,1,1,1,1],
@@ -83,12 +83,38 @@ class player:
     return {'action': 'player', 'state': 'player'}
 
 class basicStorategy:
-
   def max(self,sumCard:str) -> int:
     cards = sumCard.split('/')
     return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
-  def __init__(self):
+  def __init__(self, soft=softHandDict, hard=hardHandDict):
     self.tree = {}
+    self.soft = soft
+    self.hard = hard
+  def simpleLearning (self) -> None:
+     #他のモデルと合わせるため
+    return None
+  def playerSelectNumberMap (self, playerNum: str, delerCards: str, selectDict: dict, changeSumCost: int, soft=True) -> str:
+    PreplayerSelect: int[...] = selectDict[playerNum]
+    playerSelect: int = PreplayerSelect[self.max(delerCards)-2]
+    defaultDict = softHandDict
+    if soft == False:
+      defaultDict = hardHandDict
+    action = ''
+    if playerSelect == 1:
+      action = 'HIT'
+    elif playerSelect == 2:
+      action = 'DOUBLE'
+    elif playerSelect == 3:
+      if changeSumCost < 1:
+        action = 'CHANGE'
+      else:
+        action = self.playerSelectNumberMap(playerNum, delerCards, defaultDict, changeSumCost, soft)
+    elif playerSelect == 4:
+      action = 'EQUAL'
+    else:
+      #STAY -> 0
+      action = 'STAY'
+    return action
   def play(self, playerSumCards:str, delerCards:str, player1D:bool, changeSumCost=0, initialPlay=None, fieldInfo=None) -> Dict[str, str]:
     soft = False
     if len(playerSumCards.split('/')) >= 2:
@@ -100,26 +126,10 @@ class basicStorategy:
       return {'action': action, 'state': state}
     if soft:
       #ソフトハンド
-      PreplayerSelect: int[...] = softHandDict[str(playerNum)]
-      playerSelect: int = PreplayerSelect[self.max(delerCards)-2]
-      if playerSelect == 1:
-        #STAY
-        action = 'HIT'
-      elif playerSelect == 2:
-        action = 'DOUBLE'
-      else:
-        action = 'STAY'
+      action = self.playerSelectNumberMap(str(playerNum), delerCards, self.soft, changeSumCost, soft=True)
     else:
       #ハードハンド
-      PreplayerSelect: int[...] = hardHandDict[str(playerNum)]
-      playerSelect: int = PreplayerSelect[self.max(delerCards)-2]
-      if playerSelect == 1:
-        #STAY
-        action = 'HIT'
-      elif playerSelect == 2:
-        action = 'DOUBLE'
-      else:
-        action = 'STAY'
+      action = self.playerSelectNumberMap(str(playerNum), delerCards, self.hard, changeSumCost, soft=False)
     return {'action': action, 'state': state}
     
 
@@ -204,6 +214,7 @@ class montekarlo:
         self.tree[str(playerSumCards)+'-'+str(delerCards)] = createInitial()
     targetVal: int = 0
     targetKey: str = 'HIT'
+    first = False
     N = self.tree[str(playerSumCards)+'-'+str(delerCards)]['N']
     for key in self.actions:
       target = self.tree[str(playerSumCards)+'-'+str(delerCards)][key]
@@ -217,7 +228,8 @@ class montekarlo:
       else:
         ucb_cost = np.sqrt(2 * np.log(N))/ target['n']
         val = target['val'] + ucb_cost
-      if targetVal < val:
+      if targetVal < val or first == False:
+        first = True
         targetVal = val
         targetKey = key
     return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards)}
@@ -233,17 +245,8 @@ class montekarlo:
       action = info['action']
       state = info['state']
       if action == 'CHANGE':
-        #CHANGEなら別処理
-          changeMode = True
-          state = actions[index]['state']
-          nextState = actions[index-1]['state']
-          action = actions[index]['action']
-          nextAction = actions[index-1]['action']
-          self.tree[state]['N'] += 1
-          self.tree[state][action]['n'] += 1
-          self.tree[state][action]['val'] += (self.tree[nextState][nextAction]['val']/self.tree[nextState][nextAction]['n']) - CHANGE_COST
-      if changeMode:
-        continue
+        #後ろから考えると、チェンジを結構するたびにCHANGE_COST分マイナス
+          reward -= CHANGE_COST
       if state not in self.tree:
         self.tree[state] = createInitial()
       self.tree[state][action]['val'] += reward
@@ -271,13 +274,15 @@ class montekarlo:
 
   def output_learnData(self):
     output = []
-    keys = list(self.tree.keys())
+    keys: list[str] = list(self.tree.keys())
     for key in keys:
-      output.append(key +':'+json.dumps(self.tree[key]))
+      spl = key.split('-')
+      output.append(key +':'+json.dumps(self.tree[key]) + ', play: ' + self.play(spl[0], spl[1], False)['action'])
     return '\n'.join(output)
 class montekarlo_withFieldInfo:
-  def __init__(self):
+  def __init__(self, actions = ['HIT', 'STAY', 'DOUBLE', 'EQUAL', 'CHANGE']):
     self.tree = {}
+    self.actions = actions
   def euclidean_distance(self, x, y)-> float:   
     return np.sqrt(np.sum((x - y) ** 2))
   def list_key(self, a: list) -> str:
@@ -335,8 +340,11 @@ class montekarlo_withFieldInfo:
         self.tree[str(playerSumCards)+'-'+str(delerCards)] = createInitial()
     targetVal: int = 0
     targetKey: str = 'HIT'
+    first = False
     N = self.tree[str(playerSumCards)+'-'+str(delerCards)]['N']
-    for key in ['HIT', 'STAY', 'DOUBLE', 'EQUAL']:
+    for key in self.actions:
+      if changeSumCost == 1 and key == 'CHANGE':
+        continue
       target = self.tree[str(playerSumCards)+'-'+str(delerCards)][key]
       if target['n'] == 0:
         val = initialPlay(playerSumCards, delerCards, player1D, key)
@@ -346,17 +354,27 @@ class montekarlo_withFieldInfo:
         if flag == False:
           val_g = target['val']
         val = val_g + ucb_cost
-      if targetVal < val:
+      if targetVal < val or first == False:
+        first = True
         targetVal = val
         targetKey = key
     return {'action': targetKey, 'state': str(playerSumCards)+'-'+str(delerCards), 'fieldInfo': fieldInfo}
   def simpleLearning(self, actions: list, reward: int):
+    actions.reverse()
+    changeCnt = 0
+    for info in actions:
+      if info['action'] == 'CHANGE':
+        changeCnt += 1
+    reward += changeCnt*CHANGE_COST
     for info in actions:
       action = info['action']
       state = info['state']
       fieldInfo = info['fieldInfo']
       if state not in self.tree:
         self.tree[state] = createInitial()
+      if action == 'CHANGE':
+        #後ろから考えると、チェンジを結構するたびにCHANGE_COST分マイナス
+          reward -= CHANGE_COST
       self.tree[state][action]['val'] += reward
       self.tree[state][action]['n'] += 1
       self.tree[state]['N'] += 1
@@ -443,7 +461,7 @@ class Game:
       result = "DRAW"
     return result
   
-  def playGame(self, player1:player or montekarlo, initialPlay=simpleInitialPlay, displayCardCnt=0, initialDeck=[]) -> Tuple[list, int]:
+  def playGame(self, player1:player or montekarlo, initialPlay=simpleInitialPlay, displayCardCnt=10, initialDeck=[]) -> Tuple[list, int]:
     # 1play
     deck = []
     if len(initialDeck) == 0:
@@ -558,13 +576,16 @@ class BJLog:
         self.cnt[state] = 0
       self.states[state] += a
       self.cnt[state] += 1
-  def summaryGraph(self, ax, color) -> None:
+  def createGraph(self) -> Tuple[np.ndarray, np.ndarray]:
     result = 0
     logs = []
     logs.append(result)
     for a in self.results:
       logs.append(a+logs[len(logs)-1])
-    ax.plot(self.createX(logs), np.array(logs), label=self.name)
+    return self.createX(logs), np.array(logs)
+  def summaryGraphPlot(self, ax: pyplot.Axes, color) -> None:
+    x,y = self.createGraph()
+    ax.plot(x, y, label=self.name, color=color)
   def increaseGraph(self, ax: pyplot.Axes, color) -> None:
     targetList = list(self.states.keys())
     ax.bar(np.array(targetList), np.array(list(self.states.values())), label=self.name, width=1.5)
@@ -576,18 +597,63 @@ class BJLog:
         if float(value/self.cnt[key]) - float(b['state'][key]/b['cnt'][key]) > 0 and float(self.cnt[key]) > 0:
           output[key] = (value/self.cnt[key]) - (b['state'][key]/b['cnt'][key])
     return output
-  def pickUpOutput(self, compareDiffDict, name='') -> tuple:
-    compareDiffDictTuples = sorted(compareDiffDict.items(), key=lambda x:x[1])
+  def logDiffPlot(self, ax: pyplot.Axes, b: any, name='') -> None:
+    a1,b1 = self.createGraph()
+    a2,b2 = b.createGraph()
+    output = []
+    for index in a1:
+      output.append(b1[index] - b2[index])
+    ax.plot(a1, np.array(output), label=self.name + 'と' + b.name + 'のdiff')
+  def max(self,sumCard:str) -> int:
+    cards = sumCard.split('/')
+    return int(cards[len(cards) - 1]) #昇順なので最後に最大値がくる
+  def pickUpOutput(self, compareDiffDict, name, player) -> tuple:
+    compareDiffDictTuples: list[Tuple[str, str]] = sorted(compareDiffDict.items(), key=lambda x:x[1])
     compareDiffDictTuples.reverse()
     diff_x = []
     diff_y = []
     fileOutputDiff = {}
-    for x,y in compareDiffDictTuples:
+    soft = {}
+    hard = {}
+    for key,value in softHandDict.items():
+      soft[key] = [ a for a in value]
+    for key,value in hardHandDict.items():
+      hard[key] = [ a for a in value]
+    for x, y in compareDiffDictTuples:
       diff_x.append(x)
       diff_y.append(y)
-      fileOutputDiff[x] = y
+      spl = x.split('-')
+      fileOutputDiff[x] = {'value': y, 'action': player.play(spl[0], spl[1], False)}
+      meCard = str(self.max(spl[0]))
+      enemyCard = self.max(spl[1]) - 2
+      if len(spl[0].split('/')) == 1:
+        # hard
+        if fileOutputDiff[x]['action']['action'] == 'STAY':
+          hard[meCard][enemyCard] = 0
+        if fileOutputDiff[x]['action']['action'] == 'HIT':
+          hard[meCard][enemyCard] = 1
+        elif fileOutputDiff[x]['action']['action'] == 'DOUBLE':
+          hard[meCard][enemyCard] = 2
+        if fileOutputDiff[x]['action']['action'] == 'CHANGE':
+          hard[meCard][enemyCard] = 3
+        elif fileOutputDiff[x]['action']['action'] == 'EQUAL':
+          hard[meCard][enemyCard] = 4
+      else:
+        # soft
+        if fileOutputDiff[x]['action']['action'] == 'STAY':
+          soft[meCard][enemyCard] = 0
+        if fileOutputDiff[x]['action']['action'] == 'HIT':
+          soft[meCard][enemyCard] = 1
+        elif fileOutputDiff[x]['action']['action'] == 'DOUBLE':
+          soft[meCard][enemyCard] = 2
+        if fileOutputDiff[x]['action']['action'] == 'CHANGE':
+          soft[meCard][enemyCard] = 3
+        elif fileOutputDiff[x]['action']['action'] == 'EQUAL':
+          soft[meCard][enemyCard] = 4
     f = open(name, 'w')
     f.write(json.dumps(fileOutputDiff, indent=2))
+    f = open('basic-impro-' + name + '.json', 'w')
+    f.write(json.dumps({'hard': hard, 'soft': soft}, indent=2))
     return diff_x, diff_y
   def getStates(self) -> dict:
     return {'state': self.states, 'cnt': self.cnt}
@@ -600,8 +666,10 @@ if __name__ == '__main__':
     logs = BJLog('通常のモンテカルロ木') # playerのログをとる
     nextLogs = BJLog('ベーシックストラテジーを学習に取り入れたモンテカルロ木') #learning強化
     basicLogs = BJLog('ベーシックストラテジー') #basicStorategy
+    basicLogs_imp = BJLog('ルールに対応したベーシックストラテジー') #basicStorategy
     pres = BJLog('学習していないモンテカルロ木')
-    newnewLogs = BJLog('newnewLogs')
+    newnewLogs = BJLog('特徴ベクトルモンテカルロ木')
+    newnewLogs2 = BJLog('特徴ベクトルモンテカルロ木: CHANGEとEQUALがない')
     noChangeAndEqualLog = BJLog('CHANGEとEQUALがない【ベーシックストラテジーを学習に取り入れたモンテカルロ木】')
     noChangeAndEqualLogWeak = BJLog('CHANGEとEQUALがない【通常のモンテカルロ木】')
     noChangeAndEqualLogWeakWithCHANGE = BJLog('EQUALがない【通常のモンテカルロ木】')
@@ -609,14 +677,19 @@ if __name__ == '__main__':
     player1 = montekarlo()
     player2 = montekarlo()
     player3 = montekarlo()
+    player7 = montekarlo_withFieldInfo()
+    player8 = montekarlo_withFieldInfo(actions=['HIT', 'STAY', 'DOUBLE'])
     basicPlayer = basicStorategy()
+    json_basic_imp = json.load(open('basic-impro-2ParamDiffData.json', 'r'))
+    basicPlayer_imp = basicStorategy(soft=json_basic_imp['soft'], hard=json_basic_imp['hard'])
     noChangeAndEqual = montekarlo(actions=['HIT', 'STAY', 'DOUBLE'])
     noChangeAndEqual_weak = montekarlo(actions=['HIT', 'STAY', 'DOUBLE'])
     noChangeAndEqual_weak_with_CHANGE = montekarlo(actions=['HIT', 'STAY', 'DOUBLE', 'CHANGE'])
     noChangeAndEqual_weak_with_EQUAL = montekarlo(actions=['HIT', 'STAY', 'DOUBLE', 'EQUAL'])
+    modelAndLogs = []
     deckCount = 1
     game = Game(deckCount)
-    doribun = 50000
+    doribun = 500000
     #initialPlayの設定
     initialPlay = simpleInitialPlay
     basicInitial = basicStorategyPlay
@@ -635,6 +708,12 @@ if __name__ == '__main__':
 
       player_select2, result2 = game.playGame(basicPlayer, initialPlay,0,decks)
       player2.simpleLearning(player_select2, result2)
+
+      player_select7, result7 = game.playGame(player7, initialPlay,0,decks)
+      player7.simpleLearning(player_select7, result7)
+
+      player_select8, result8 = game.playGame(player8, initialPlay,0,decks)
+      player8.simpleLearning(player_select8, result8)
 
       player_selectChange, result3 = game.playGame(basicPlayer, initialPlay,0,decks)
       noChangeAndEqual.simpleLearning(player_selectChange, result3)
@@ -658,6 +737,12 @@ if __name__ == '__main__':
       player_select2, result2 = game.playGame(player2, initialPlay,0,decks)
       player2.simpleLearning(player_select2, result2*1)
 
+      player_select7, result7 = game.playGame(player7, initialPlay,0,decks)
+      player7.simpleLearning(player_select7, result7)
+
+      player_select8, result8 = game.playGame(player8, initialPlay,0,decks)
+      player8.simpleLearning(player_select8, result8)
+
       player_selectChange, nochange_result = game.playGame(noChangeAndEqual, initialPlay,0,decks)
       noChangeAndEqual.simpleLearning(player_selectChange, nochange_result)
 
@@ -676,28 +761,55 @@ if __name__ == '__main__':
       # 10000回繰り返す
       decks = game.createDeck()
       random.shuffle(decks)
+
       player_select1, result1 = game.playGame(player1,initialPlay,0,decks)
+      player1.simpleLearning(player_select1, result1)
+
       player_select2, result2 = game.playGame(player2, initialPlay,0,decks)
+      player2.simpleLearning(player_select2, result2)
+
+      player_select7, result7 = game.playGame(player7, initialPlay,0,decks)
+      player7.simpleLearning(player_select7, result7)
+
+      player_select8, result8 = game.playGame(player8, initialPlay,0,decks)
+      player8.simpleLearning(player_select8, result8)
+
       player_selectChange, nochange_result = game.playGame(noChangeAndEqual, initialPlay,0,decks)
+      noChangeAndEqual.simpleLearning(player_selectChange, nochange_result)
+
       player_selectChange_week, nochange_result_weak = game.playGame(noChangeAndEqual_weak, initialPlay,0,decks)
+      noChangeAndEqual_weak.simpleLearning(player_selectChange_week, nochange_result_weak)
+
       player_basic, result3 = game.playGame(basicPlayer)
+
+      player_basic_imp, result3_imp = game.playGame(basicPlayer_imp)
+
       player_selectChange_week_CHANGE, result5 = game.playGame(noChangeAndEqual_weak_with_CHANGE, initialPlay,0,decks)
+      noChangeAndEqual_weak_with_CHANGE.simpleLearning(player_selectChange_week_CHANGE, result5)
+
       player_selectChange_week_EQUAL, result6 = game.playGame(noChangeAndEqual_weak_with_EQUAL, initialPlay,0,decks)
+      noChangeAndEqual_weak_with_EQUAL.simpleLearning(player_selectChange_week_EQUAL, result6)
       logs.push(result1, player_select1)
       nextLogs.push(result2, player_select2)
       basicLogs.push(result3, player_basic)
+      basicLogs_imp.push(result3_imp, player_basic_imp)
       noChangeAndEqualLog.push(nochange_result, player_selectChange)
       noChangeAndEqualLogWeak.push(nochange_result_weak, player_selectChange_week)
       noChangeAndEqualLogWeakWithCHANGE.push(result5, player_selectChange_week_CHANGE)
       noChangeAndEqualLogWeakWithEQUAL.push(result6, player_selectChange_week_EQUAL)
-    print('done:write')
+      newnewLogs.push(result7, player_select7)
+      newnewLogs2.push(result8, player_select8)
+    print('done:write:')
     fig, ax = pyplot.subplots()
     fig.suptitle(str(doribun*2)+'回学習させたモデルの結果')
-    logs.summaryGraph(ax,color='red')
-    nextLogs.summaryGraph(ax,color='blue')
-    basicLogs.summaryGraph(ax,color='orange')
-    noChangeAndEqualLog.summaryGraph(ax,color='pink')
-    noChangeAndEqualLogWeak.summaryGraph(ax,color='green')
+    logs.summaryGraphPlot(ax,color='red')
+    nextLogs.summaryGraphPlot(ax,color='blue')
+    basicLogs.summaryGraphPlot(ax,color='orange')
+    noChangeAndEqualLog.summaryGraphPlot(ax,color='pink')
+    noChangeAndEqualLogWeak.summaryGraphPlot(ax,color='green')
+    basicLogs_imp.summaryGraphPlot(ax, color='gray')
+    # newnewLogs.summaryGraphPlot(ax,color='black')
+    # newnewLogs2.summaryGraphPlot(ax, color='gray')
     f = open('player2Data', 'w')
     f.write(player2.output_learnData())
     f = open('player1Data', 'w')
@@ -710,7 +822,7 @@ if __name__ == '__main__':
     f.write(noChangeAndEqual_weak_with_EQUAL.output_learnData())
     dt_now = datetime.datetime.now()
     fig.legend(bbox_to_anchor=(1, 0.25))
-    fig.savefig('outputSummaryGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
+    fig.savefig('outputsummaryGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
     fig2, ax2 = pyplot.subplots()
     pyplot.xticks(rotation=90)
     logs.increaseGraph(ax2, color='red')
@@ -722,9 +834,9 @@ if __name__ == '__main__':
     fig2.savefig('outputIncreaseGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
     fig3, ax3 = pyplot.subplots(nrows=1, ncols=3)
     pyplot.xticks(rotation=90)
-    diff_x_weak, diff_y_weak = logs.pickUpOutput(compareDiffDictWeak, '2ParamDiffData')
-    diff_x_weak_equal, diff_y_weak_equal = logs.pickUpOutput(compareDiffDictWeakWithEqual, '1ParamDiffDataWithEqual')
-    diff_x_weak_change, diff_y_weak_change = logs.pickUpOutput(compareDiffDictWeakWithCHANGE, '1ParamDiffDataWithCHANGE')
+    diff_x_weak, diff_y_weak = logs.pickUpOutput(compareDiffDictWeak, '2ParamDiffData', player1)
+    diff_x_weak_equal, diff_y_weak_equal = logs.pickUpOutput(compareDiffDictWeak, '1ParamDiffDataWithEqual', noChangeAndEqual_weak_with_EQUAL)
+    diff_x_weak_change, diff_y_weak_change = logs.pickUpOutput(compareDiffDictWeak, '1ParamDiffDataWithCHANGE', noChangeAndEqual_weak_with_CHANGE)
     ax3[0].bar(np.array(list(diff_x_weak)), np.array(list(diff_y_weak)), width=1.0, tick_label=np.array(list(diff_x_weak)))
     ax3[0].set_title(noChangeAndEqualLogWeak.getName())
     ax3[1].bar(np.array(list(diff_x_weak_equal)), np.array(list(diff_y_weak_equal)), width=1.0, tick_label=np.array(list(diff_x_weak_equal)))
@@ -734,4 +846,19 @@ if __name__ == '__main__':
     fig3.suptitle('通常のモンテカルロ木 > n のdiff')
     fig3.legend()
     fig3.savefig('outputDiffGraph/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
+
+    # 改良ベーシックストラテジー
+    fig4, ax4 = pyplot.subplots()
+    fig4.suptitle('ベーシックストラテジーの改良前,後')
+    basicLogs_imp.summaryGraphPlot(ax4, color='blue')
+    basicLogs.summaryGraphPlot(ax4,color='red')
+    fig4.legend()
+    fig4.savefig('outputsummaryGraph_unique/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
+
+    fig5, ax5 = pyplot.subplots()
+    fig5.suptitle('ベーシックストラテジーの改良前/後のdiffと、モンテカルロ木のルール追加前/後')
+    logs.logDiffPlot(ax5,noChangeAndEqualLogWeak)
+    basicLogs_imp.logDiffPlot(ax5,basicLogs)
+    fig5.legend()
+    fig5.savefig('outputDiffs/' + dt_now.strftime('%Y-%m-%d %H:%M:%S') +'.png')
     pyplot.show()
